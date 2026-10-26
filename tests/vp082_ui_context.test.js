@@ -43,11 +43,11 @@ test('VP08.2: 7-file ZIP has two distinct named PNG files and one common local c
  await assert.rejects(()=>makeIssueZip(fault,'fault',png,{},d,undefined),/Full UI context evidence is not a valid PNG/);
  await assert.rejects(()=>makeIssueZip(fault,'fault',png,{},d,new Uint8Array([0])),/Full UI context evidence is not a valid PNG/);
 });
-test('VP08.2: Save As cancellation never calls either evidence screenshot producer',async()=>{
- let called=false;
- const env={isSecureContext:true,async showSaveFilePicker(){const e=new Error('Cancel');e.name='AbortError';throw e;}};
- await assert.rejects(()=>saveIssueZip(fault,'fault',async()=>{called=true;return {mapPng:png,uiPng:png};},{},env),{name:'AbortError'});
- assert.equal(called,false);
+test('VP08.2: bad screenshot never creates zero-byte file or initiates download',async()=>{
+ let downloaded=false;
+ const env={URL:{createObjectURL(){downloaded=true;throw Error('unexpected download');}}};
+ await assert.rejects(()=>saveIssueZip(fault,'fault',async()=>{throw Error('Evidence capture rejected');},{},env),/Evidence capture rejected/);
+ assert.equal(downloaded,false);
 });
 test('VP08.2: button actually wires TWO captures with frozen replay and no silent PNG fallback',()=>{
  const main=readFileSync(new URL('../app/main.js',import.meta.url),'utf8');

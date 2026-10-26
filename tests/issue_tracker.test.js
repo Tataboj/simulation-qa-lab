@@ -44,19 +44,19 @@ test('package exports ZIP holding summary, description, image, XLSX and JSON',as
   assert.equal(json.findings[0].current.t,65);
   assert.equal(JSON.stringify(fault),JSON.stringify(load('fault')),'No source mutation');
 });
-test('save picker happens before screenshot generation, and successful close is awaited',async()=>{
-  let picker=false,rendered=false,wrote=false,closed=false,chosen;
-  const env={isSecureContext:true,async showSaveFilePicker(opts){picker=true;chosen=opts;return {async createWritable(){return {async write(blob){wrote=blob.type==='application/zip';},async close(){closed=true}};}}}};
-  const result=await saveIssueZip(fault,'fault',async()=>{rendered=true;assert.equal(picker,true);return {mapPng:png,uiPng:png};},{},env);
-  assert.equal(result.method,'picker');assert.equal(wrote,true);assert.equal(closed,true);
-  assert.equal(chosen.types[0].accept['application/zip'][0],'.zip');
-  assert.equal(rendered,true);
+test('ZIP is offered for download only AFTER evidence renders and archive is complete',async()=>{
+  let rendered=false,downloaded=false,captured;
+  const mock={URL:{createObjectURL(blob){assert.equal(rendered,true);assert.ok(blob.size>100);return 'blob:mock';},revokeObjectURL(){}},
+   document:{createElement(){return {click(){downloaded=true;},remove(){}};},body:{append(a){captured=a;}}},
+   setTimeout(){} };
+  const result=await saveIssueZip(fault,'fault',async()=>{rendered=true;return {mapPng:png,uiPng:png};},{},mock);
+  assert.equal(result.method,'download');assert.equal(downloaded,true);assert.match(captured.download,/issue_bundle\.zip$/);
 });
-test('user cancellation produces no screenshot or write',async()=>{
-  let rendered=false;
-  const env={isSecureContext:true,async showSaveFilePicker(){let e=new Error('Cancel');e.name='AbortError';throw e;}};
-  await assert.rejects(()=>saveIssueZip(fault,'fault',async()=>{rendered=true;return {mapPng:png,uiPng:png};},{},env),e=>e.name==='AbortError');
-  assert.equal(rendered,false);
+test('failed screenshot generates NO download and NO zero-byte archive',async()=>{
+  let touched=false;
+  const mock={URL:{createObjectURL(){touched=true;throw Error('should not happen');}}};
+  await assert.rejects(()=>saveIssueZip(fault,'fault',async()=>{throw new Error('Map invalid');},{},mock),/Map invalid/);
+  assert.equal(touched,false);
 });
 test('integration wires copy controls and map evidence to actual buttons',()=>{
   const html=readFileSync(new URL('../index.html',import.meta.url),'utf8');

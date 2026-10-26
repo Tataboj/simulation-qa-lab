@@ -13,7 +13,7 @@ import {invalidEdgeSet, positionAt as posAt, heading} from './replay.js';
 import {replaySeparation} from './separation.js';
 import {REFERENCE_LAYER_IDS, referencePaint} from './reference_style.js';
 import {saveEvidence} from './evidence_export.js';
-import {issueFromRun, saveIssueZip, renderAnnotatedMapPng} from './issue_report.js';
+import {issueFromRun, saveIssueZip, renderAnnotatedMapPng, withFramedFaultMap} from './issue_report.js';
 import {renderUiContextPng} from './ui_context.js';
 import {ENTITIES_META, entityIdentity, mapContext} from './vp02_metadata.js';
 import {SCENARIOS, optionLabel} from './scenario_catalog.js';
@@ -313,10 +313,10 @@ function bindExportDialog() {
     try {
       const viewTime=now;
       const result=await saveIssueZip(activeRun(),activeIssueVariant(),
-        async issue=>({
+        async issue=>withFramedFaultMap(map,issue,async()=>({
           mapPng:await renderAnnotatedMapPng(map,issue,viewTime,{mapMode}),
           uiPng:await renderUiContextPng($('app'),map)
-        }),
+        })),
         {userAgent:navigator.userAgent,host:location.host});
       status.textContent=result.method==='picker'
         ? `Evidence package saved: ${result.filename}`

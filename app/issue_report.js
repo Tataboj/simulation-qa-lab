@@ -155,28 +155,60 @@ export async function makeIssueZip(run,variant,pngBytes,environment={},createdAt
   ];
   return {issue,files,filename:`${root}_issue_bundle.zip`,blob:zipStore(files,'application/zip',createdAt)};
 }
-export async function saveIssueZip(run,variant,renderEvidence,environment={},env=window){
+/** Produce a browser download only after every evidence image and ZIP entry exists.
+ *  An early native save picker may leave a zero-byte file if map capture fails.
+ */
+export async function saveIssueZip(run,variant,renderEvidence,environment={},env=globalThis){
   const issue=issueFromRun(run,variant,environment);
   const createdAt=new Date();
-  const filename=`${issue.titleRoot}_${exportTimestamp(createdAt)}_issue_bundle.zip`;
-  let handle=null;
-  if (typeof env.showSaveFilePicker==='function' && env.isSecureContext) {
-    // Show picker during direct user interaction, before async screenshot encoding.
-    handle=await env.showSaveFilePicker({suggestedName:filename,types:[{description:'QA issue evidence bundle',accept:{'application/zip':['.zip']}}]});
-  }
   const images=await renderEvidence(issue);
-  if (!images || !isPng(images.mapPng) || !isPng(images.uiPng)) throw new Error('Both map and full UI PNG evidence are required');
+  if (!images || !isPng(images.mapPng) || !isPng(images.uiPng))
+    throw new Error('Both map and full UI PNG evidence are required');
   const generated=await makeIssueZip(run,variant,images.mapPng,environment,createdAt,images.uiPng);
-  if(handle){
-    const w=await handle.createWritable();
-    try{await w.write(generated.blob);await w.close();}catch(e){try{await w.abort?.();}catch{}throw e;}
-    return {method:'picker',filename};
+  const urlApi=env.URL || globalThis.URL;
+  const documentApi=env.document || globalThis.document;
+  const href=urlApi.createObjectURL(generated.blob);
+  try{
+    const link=documentApi.createElement('a');
+    link.href=href;link.download=generated.filename;
+    documentApi.body.append(link);link.click();link.remove();
+  } finally {
+    // Browser needs a short interval to complete download dispatch.
+    const defer=env.setTimeout || globalThis.setTimeout;
+    defer(()=>urlApi.revokeObjectURL(href),30000);
   }
-  // Fallback browser download. Does not assert save succeeded or where it was saved.
-  const href=URL.createObjectURL(generated.blob);
-  try{const a=document.createElement('a');a.href=href;a.download=filename;document.body.append(a);a.click();a.remove();}
-  finally{setTimeout(()=>URL.revokeObjectURL(href),30000);}
-  return {method:'download',filename};
+  return {method:'download',filename:generated.filename};
+}
+/** Temporarily frame both RAW fault endpoints, capture screenshots, restore user's view.
+ *  Camera changes are visual only: never change replay time or source telemetry.
+ */
+export async function withFramedFaultMap(map,issue,renderEvidence){
+  if(!map || !map.loaded())throw new Error('Map not ready for evidence capture');
+  const camera={center:map.getCenter(),zoom:map.getZoom(),bearing:map.getBearing(),pitch:map.getPitch()};
+  const f=issue.finding;
+  const pts=[[f.previous.lon,f.previous.lat],[f.current.lon,f.current.lat]];
+  try {
+    const canvas=map.getCanvas();
+    if(canvas.clientWidth<180||canvas.clientHeight<180)throw new Error('Map viewport is too small to capture');
+    const margin=Math.min(90,Math.max(30,Math.floor(Math.min(canvas.clientWidth,canvas.clientHeight)*0.13)));
+    const points=pts.map(p=>map.project(p));
+    const out=points.some(p=>!Number.isFinite(p.x)||!Number.isFinite(p.y)||p.x<margin||p.y<margin||p.x>canvas.clientWidth-margin||p.y>canvas.clientHeight-margin);
+    if(out){
+      // Register before fitBounds, so synchronous map events cannot be missed.
+      const idle=new Promise((resolve,reject)=>{
+        let done=false;
+        const timeout=setTimeout(()=>{if(!done){done=true;reject(new Error('Map did not settle for evidence capture'));}},12000);
+        map.once('idle',()=>{if(!done){done=true;clearTimeout(timeout);resolve();}});
+      });
+      const west=Math.min(...pts.map(p=>p[0])),east=Math.max(...pts.map(p=>p[0]));
+      const south=Math.min(...pts.map(p=>p[1])),north=Math.max(...pts.map(p=>p[1]));
+      map.fitBounds([[west,south],[east,north]],{padding:margin,duration:0,maxZoom:13});
+      await idle;
+    }
+    return await renderEvidence();
+  } finally {
+    map.jumpTo(camera);
+  }
 }
 /** Reject maps whose readback is uniformly black/empty (MapLibre 6 default buffer).
  *  Check BEFORE drawing overlays, so red markers cannot disguise a blank map.
