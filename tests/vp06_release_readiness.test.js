@@ -34,11 +34,15 @@ test('header and left mission card reflect current QA domain, never stale fixed 
  assert.match(main,/scenario_id!==meta\.id/);
  assert.match(main,/\$\('qaDomain'\)\.value=next/);
 });
-test('candidate README describes the current public handoff without claiming publication',()=>{
+test('README states the verified Pages demo without claiming v1.0.0 release',()=>{
  const version=JSON.parse(read('package.json')).version;
  const readme=read('README.md');
  assert.ok(readme.includes(version));
  for (const id of ['ECHO-CP01','ECHO-EV01','POSITION_JUMP','EVENT_ORDER_VIOLATION']) assert.ok(readme.includes(id),id);
- assert.match(readme,/hosted GitHub Pages site has not been deployed/i); 
+ assert.match(readme,/https:\/\/tataboj\.github\.io\/simulation-qa-lab\//i);
+ assert.match(readme,/Pages deployment #2/);
+ assert.match(readme,/explicit owner approval/);
+ assert.doesNotMatch(readme,/hosted GitHub Pages site has not been deployed/i);
+ assert.doesNotMatch(readme,/The hosted demo has not been deployed/i);
  for (const file of ['docs/QA_ARCHITECTURE.md','docs/THIRD_PARTY_PROVENANCE.md','LICENSE','THIRD_PARTY_NOTICES.md']) assert.ok(existsSync(new URL('../'+file,import.meta.url)),file);
 });

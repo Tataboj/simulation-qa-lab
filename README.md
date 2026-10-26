@@ -2,7 +2,9 @@
 
 A browser-based QA exercise for deterministic simulation telemetry and event logs. Compare a clean reference run with an injected defect, inspect the source records, and export a developer-ready issue package.
 
-**Version:** `1.0.0-rc.1` (release candidate). Maintained under [Tataboj](https://github.com/Tataboj). The hosted demo has not been deployed.
+**Version:** `1.0.0-rc.1` (release candidate; not an official `v1.0.0` release). Maintained under [Tataboj](https://github.com/Tataboj).
+
+**Live demo:** [Open Simulation QA Lab](https://tataboj.github.io/simulation-qa-lab/) (public GitHub Pages deployment).
 
 ## Try it
 
@@ -48,9 +50,9 @@ npm audit
 npm run build
 ```
 
-The recorded Windows acceptance included 16 Python tests, 108 JavaScript tests, all six scenario fixtures, a clean `npm ci` installation, and a production build. The included lockfile has SHA-256 `50CE46B21D9B62ECE126E4F5A397DFA229E7A21BB907481B908C785D5AFE24FA`. GitHub Actions CI passed on the initial main-branch commit, including fixture verification, Python and JavaScript QA, dependency installation, dependency audit, and production build. The hosted Pages URL remains untested.
+As of 2026-10-26, acceptance evidence includes 16 Python tests, 110 JavaScript tests, all six deterministic scenario fixtures, a clean Windows `npm ci` installation, and a successful `npm run build:pages` production build. GitHub QA workflow #4 passed for commit `d5aa2bf`; the manually triggered Pages deployment #2 for that commit also passed. A real Chrome/Windows ECHO-01 `POSITION_JUMP` issue export produced a readable seven-file ZIP; 242 Excel telemetry records matched the JSON source records. This observed browser acceptance covers that movement-fault export, not an exhaustive cross-browser or all-scenarios matrix. The included lockfile has SHA-256 `50CE46B21D9B62ECE126E4F5A397DFA229E7A21BB907481B908C785D5AFE24FA`.
 
-**GitHub Pages:** the approved repository is `simulation-qa-lab` under `Tataboj`. Locally, use `npm run build:pages` and preview at `/simulation-qa-lab/`. The Pages workflow is **manual-only** and must not be run without deployment approval. No live demo is claimed yet.
+**GitHub Pages:** the public demo is available at [tataboj.github.io/simulation-qa-lab](https://tataboj.github.io/simulation-qa-lab/). Locally, `npm run build:pages` builds the `/simulation-qa-lab/` base path. The Pages workflow remains **manual-only**; any new deployment requires owner approval.
 
 ## Scope and dependencies
 
@@ -60,4 +62,4 @@ This is an independent, privately developed software-testing demo. It does not c
 
 **License:** [MIT](LICENSE) for original project code and assets, subject to the rights held by the copyright holder. See [third-party notices](THIRD_PARTY_NOTICES.md) for external software, maps and fonts.
 
-The hosted GitHub Pages site has not been deployed or accepted. Public visibility, hosted deployment, and a v1.0.0 release require separate owner approval.
+The public repository and GitHub Pages demo are live. The ECHO-01 issue-evidence export was accepted on 2026-10-26. Publishing a `v1.0.0` tag or GitHub Release, or changing the app version from `1.0.0-rc.1` to `1.0.0`, requires separate explicit owner approval.
