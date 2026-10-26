@@ -29,3 +29,5 @@ jobs:
         run: npm audit
       - name: Production build
         run: npm run build
+      - name: Verify license notices inside deployable artifact
+        run: node scripts/lic02_verify_dist.mjs

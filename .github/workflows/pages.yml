@@ -38,6 +38,8 @@ jobs:
         env:
           APPROVED_REPO: ${{ inputs.repository_name }}
         run: npx vite build --base="/${APPROVED_REPO}/"
+      - name: Verify license notices inside deployable artifact
+        run: node scripts/lic02_verify_dist.mjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
