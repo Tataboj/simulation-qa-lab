@@ -1,15 +1,16 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {issueFromRun, mapEvidenceLayout, renderAnnotatedMapPng} from '../app/issue_report.js';
+import {issueFromRun, mapEvidenceLayout, mapEvidenceAttributionLines, renderAnnotatedMapPng} from '../app/issue_report.js';
 const load=n=>JSON.parse(readFileSync(new URL(`../public/data/${n}.json`,import.meta.url),'utf8'));
 const png=Uint8Array.from(Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIHWP4//8/AwAI/AL+XJuIXAAAAABJRU5ErkJggg==','base64'));
 const fault=issueFromRun(load('fault'),'fault');
 
 test('VP-08.3: separate title + evidence sidebar, ORIGINAL map viewport never overpainted',()=>{
  const g=mapEvidenceLayout(1231,577,1);
- assert.deepEqual({w:g.width,h:g.height,mapY:g.mapY,sideX:g.sideX},{w:1685,h:695,mapY:94,sideX:1231});
+ assert.deepEqual({w:g.width,h:g.height,mapY:g.mapY,sideX:g.sideX},{w:1685,h:731,mapY:94,sideX:1231});
  assert.equal(g.height-g.header-g.footer,577);
+ assert.equal(g.footer,60); // three attribution lines outside the original map pixels
  assert.equal(g.sideX,g.mapWidth);
  assert.ok(g.sideX>0&&g.sideW>=400);
  assert.throws(()=>mapEvidenceLayout(0,577,1),/Invalid/);
@@ -21,7 +22,7 @@ test('VP-08.3: raw previous and current markers remain inside unscaled original 
   drawImage(...args){ops.push(['image',...args]);},getImageData(x,y){return {data:[120+(x%25),160+(y%25),185,255]};},
   beginPath(){},arc(...args){ops.push(['arc',...args]);},fill(){},stroke(){},moveTo(x,y){ops.push(['move',x,y]);},lineTo(x,y){ops.push(['line',x,y]);},
   setLineDash(){},fillRect(x,y,w,h){ops.push(['fillRect',x,y,w,h]);},strokeRect(x,y,w,h){ops.push(['strokeRect',x,y,w,h]);},
-  fillText(text,x,y){texts.push({text:String(text),x,y});},set fillStyle(x){},set strokeStyle(x){},set lineWidth(x){},set font(x){}
+  fillText(text,x,y,maxWidth){texts.push({text:String(text),x,y,maxWidth});},set fillStyle(x){},set strokeStyle(x){},set lineWidth(x){},set font(x){}
  };
  const canvas=()=>({width:0,height:0,getContext(){return ctx;},toBlob(cb){cb(new Blob([png],{type:'image/png'}));}});
  const old=globalThis.document;globalThis.document={createElement(){const c=canvas();createCount++;if(createCount===1)output=c;return c;}};
@@ -43,6 +44,17 @@ test('VP-08.3: raw previous and current markers remain inside unscaled original 
  assert.ok(texts.some(t=>t.text==='FAULT T+01:05'));
  assert.ok(texts.some(t=>t.text.includes('Red arrow = direction')));
  assert.ok(texts.some(t=>t.text.includes('4041.1 km/h')));
+ const footerGeometry=mapEvidenceLayout(1231,577,1);
+ const footerY=footerGeometry.mapY+577;
+ for (const exact of mapEvidenceAttributionLines('geographic')) {
+   const found=texts.find(t=>t.text===exact);
+   assert.ok(found,`Missing visible geographic credit: ${exact}`);
+   assert.ok(found.y>footerY && found.y<=footerGeometry.height,`Attribution outside footer: ${exact}`);
+   assert.equal(found.maxWidth,footerGeometry.width-20,'Attribution width constrained to export image');
+ }
+ assert.ok(texts.some(t=>t.text.includes('https://www.openstreetmap.org/copyright')));
+ assert.ok(texts.some(t=>t.text.includes('© OpenMapTiles')));
+ assert.ok(texts.some(t=>t.text.includes('© OpenStreetMap contributors')));
 });
 
 test('VP-08.3: refuses misleading cropped map evidence when raw endpoint is outside visible viewport',async()=>{
@@ -58,4 +70,21 @@ test('VP-08.3: event-order and checkpoint evidence never suggest a false movemen
  assert.match(code,/f\.rule==='POSITION_JUMP'\)directedFaultArrow/);
  assert.match(code,/Independent source-log error/);
  assert.match(code,/ctx\.drawImage\(source,0,layout\.mapY,width,height\)/);
+});
+
+
+test('LIC-01: static PNG attribution distinguishes online OpenMapTiles/ODbL from fictional offline art',()=>{
+ const geographic=mapEvidenceAttributionLines('geographic');
+ assert.equal(geographic.length,3);
+ assert.match(geographic.join(' '),/© OpenMapTiles/);
+ assert.match(geographic.join(' '),/© OpenStreetMap contributors/);
+ assert.match(geographic.join(' '),/OpenFreeMap/);
+ assert.match(geographic.join(' '),/ODbL/);
+ assert.match(geographic.join(' '),/https:\/\/www\.openstreetmap\.org\/copyright/);
+ assert.match(geographic.join(' '),/https:\/\/openmaptiles\.org\//);
+ assert.deepEqual(mapEvidenceAttributionLines(undefined),geographic,'unknown map mode credits online sources conservatively');
+ const offline=mapEvidenceAttributionLines('synthetic');
+ assert.equal(offline.length,3);
+ assert.match(offline.join(' '),/original fictional artwork/);
+ assert.doesNotMatch(offline.join(' '),/© OpenMapTiles|© OpenStreetMap contributors/);
 });

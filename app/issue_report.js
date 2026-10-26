@@ -233,6 +233,21 @@ export function assessMapPixels(ctx,width,height) {
   const valid=empty.length/samples.length<0.88 && almostBlack.length/samples.length<0.96 && distinct>=3;
   return {valid,blackRatio:empty.length/samples.length,distinct,reason:valid?'OK':'Map background appears blank or black; screenshot rejected'};
 }
+/** Visible credits for standalone evidence; offline art is not an OSM basemap. */
+export function mapEvidenceAttributionLines(mapMode) {
+  return mapMode==='synthetic'
+    ? [
+      'Offline schematic map: original fictional artwork',
+      'Synthetic WGS84 positions; no online basemap in this image',
+      'Simulation QA Lab · fictional QA evidence'
+    ]
+    : [
+      'Basemap: OpenFreeMap | © OpenMapTiles | © OpenStreetMap contributors',
+      'OpenStreetMap data: ODbL · https://www.openstreetmap.org/copyright',
+      'Credits: https://openmaptiles.org/ · https://openfreemap.org/'
+    ];
+}
+
 /** Technical evidence uses a reserved HEADER and SIDE PANEL, not overlays over
  *  the MapLibre view. Pixel coordinates and every raw sample remain unchanged.
  *  No map panning/zooming, resampling or telemetry interpolation during export.
@@ -241,7 +256,7 @@ export function mapEvidenceLayout(mapWidth,mapHeight,pixelScale) {
   if (![mapWidth,mapHeight,pixelScale].every(v=>Number.isFinite(v)&&v>0))
     throw new Error('Invalid technical map evidence geometry');
   const header=Math.round(94*pixelScale);
-  const footer=Math.round(24*pixelScale);
+  const footer=Math.round(60*pixelScale);
   const sidebar=Math.round(454*pixelScale);
   return Object.freeze({width:mapWidth+sidebar,height:header+mapHeight+footer,
     mapWidth,mapHeight,mapX:0,mapY:header,header,footer,sidebar,
@@ -362,13 +377,13 @@ export async function renderAnnotatedMapPng(map,issue,shownSeconds,options={}) {
     'No data corrected or interpolated.']) {
     ctx.fillText(line,boxX+3*pixelScale,noteY);noteY+=24*pixelScale;
   }
-  const attribution=options.mapMode==='geographic'
-    ? 'Basemap © OpenStreetMap contributors · OpenFreeMap | Synthetic telemetry / fictional units'
-    : 'Offline schematic (invented cartography) / unchanged synthetic WGS84 unit positions';
+   // Credits remain legible in a standalone PNG, including the ODbL information URL.
+  // Only an explicitly selected synthetic map omits online-basemap credits.
+  const attributionLines=mapEvidenceAttributionLines(options.mapMode);
   const footerY=layout.mapY+height;
   ctx.fillStyle='#102633';ctx.fillRect(0,footerY,layout.width,layout.footer);
   ctx.fillStyle='#fff';ctx.font=`${Math.max(10,11*pixelScale)}px sans-serif`;
-  ctx.fillText(attribution,10*pixelScale,footerY+16*pixelScale);
+  attributionLines.forEach((line,i)=>ctx.fillText(line,10*pixelScale,footerY+(17+i*18)*pixelScale,layout.width-20*pixelScale));
   const blob=await new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(new Error('PNG encoding failed')),'image/png'));
   const bytes=new Uint8Array(await blob.arrayBuffer());
   if(!isPng(bytes))throw new Error('Browser returned non-PNG data');
