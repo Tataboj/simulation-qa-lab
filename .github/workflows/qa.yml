@@ -1,4 +1,4 @@
-# Private candidate CI: not yet run on GitHub. Committed Windows-verified lockfile; GitHub CI unverified.
+# CI verification for synthetic QA fixtures, tests, dependencies, and production build.
 name: Fictional QA demo verification
 on:
   push:
