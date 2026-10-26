@@ -1,0 +1,31 @@
+# Private candidate CI: not yet run on GitHub. Committed Windows-verified lockfile; GitHub CI unverified.
+name: Fictional QA demo verification
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  tests-and-build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Independent raw fixture release verification
+        run: python scripts/VP08_VERIFY_SCENARIOS.py
+      - name: Deterministic Python QA
+        run: python -m unittest discover -s tests -p 'test*.py' -v
+      - name: JavaScript regressions and release contracts
+        run: node --test tests/*.test.js
+      - name: Install web dependencies
+        run: npm ci --no-fund
+      - name: Dependency audit
+        run: npm audit
+      - name: Production build
+        run: npm run build

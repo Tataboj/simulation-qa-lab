@@ -1,0 +1,45 @@
+# MANUAL ONLY. Do not trigger until the human owner authorizes hosted publication.
+name: Pages — manual deployment (human approval required)
+on:
+  workflow_dispatch:
+    inputs:
+      repository_name:
+        description: 'Approved GitHub repository name (for /repo/ Pages path)'
+        required: true
+        type: string
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: manual-pages
+  cancel-in-progress: false
+jobs:
+  build-and-deploy:
+    environment:
+      name: github-pages
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - name: Verify approved repository path
+        env:
+          APPROVED_REPO: ${{ inputs.repository_name }}
+          ACTUAL_REPO: ${{ github.event.repository.name }}
+        run: |
+          test "$APPROVED_REPO" = "$ACTUAL_REPO" || { echo 'Repository name mismatch'; exit 1; }
+      - name: Clean dependency install
+        run: npm ci --no-fund
+      - name: Build Pages static site
+        env:
+          APPROVED_REPO: ${{ inputs.repository_name }}
+        run: npx vite build --base="/${APPROVED_REPO}/"
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - uses: actions/deploy-pages@v4

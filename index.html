@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" data-theme="daylight">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+  <meta name="theme-color" content="#f4f7f8" />
+  <title>Simulation QA Lab — Fictional Telemetry and Event QA</title>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand-mark"><span class="target-shape">◎</span></div>
+      <div class="brand-copy"><div class="brand-title">SIMULATION QA LAB <span class="brand-slash">/</span> <b>QA OPERATIONS</b></div><div class="brand-sub">FICTIONAL SIMULATION QUALITY ASSURANCE <span class="dot-spacer">•</span> <span id="brandExercise">EXERCISE ECHO-01</span></div></div>
+      <div class="header-spacer"></div>
+      <div class="header-meta"><span class="pulse-dot"></span> REPLAY DATA <span class="header-separator"></span> FICTIONAL DEMO</div>
+      <button id="guideToggle" class="guide-toggle" type="button" aria-pressed="true" aria-controls="guideTip" aria-describedby="guideInstructions">? Guide Mode: ON</button>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false" title="Toggle map and interface between daylight and night">☾ Night view</button>
+      <div class="header-clock" id="clock">T+ 00:00</div>
+    </header>
+    <div class="shell" id="appShell">
+      <div id="railResize" class="rail-resize" role="separator" tabindex="0" aria-orientation="vertical" aria-label="Resize Mission Control panel" aria-description="Drag edge to resize; arrow keys to adjust; Home or End for limits; double-click to reset" aria-valuemin="210" aria-valuemax="430" aria-valuenow="334" aria-valuetext="Mission control width 334 pixels"><span class="rail-resize-grip" aria-hidden="true">⋮</span></div>
+      <aside class="rail">
+        <div class="rail-heading"><span>01</span> MISSION CONTROL</div>
+        <div class="section-title">MISSION</div>
+        <div class="mission-select"><span class="mission-icon">◈</span><div><strong id="missionScenario">ECHO-01</strong><small id="missionSubtitle">Convoy telemetry validation</small></div></div>
+        <div class="section-title section-gap">TEST DOMAIN</div>
+        <select id="qaDomain" class="vp04-domain" aria-label="QA test domain"></select>
+        <div class="section-title section-gap">TEST VARIANT</div>
+        <div class="variant-list" role="group" aria-label="Scenario variant">
+          <button id="btnClean" class="variant" type="button"><span class="variant-icon good">✓</span><span><strong>Reference run</strong><small>Verified source baseline</small></span><span class="variant-end">01</span></button>
+          <button id="btnFault" class="variant active" type="button"><span class="variant-icon bad">!</span><span><strong>Injected fault</strong><small id="faultSubtitle">Position discontinuity</small></span><span class="variant-end">02</span></button>
+        </div>
+        <div class="section-title section-gap">MAP &amp; GEOGRAPHY</div><button type="button" id="mapModeToggle" class="vp02-map-toggle" title="Switch basemap: real geography online or illustrated schematic offline; synthetic unit coordinates stay unchanged">◈ Offline schematic map</button><div class="vp02-map-hint" id="mapModeHint">Real map: OpenFreeMap / OpenStreetMap. All unit positions are fictional.</div><div class="section-title section-gap">DISPLAY LAYERS</div>
+        <label class="layer-toggle" data-guide="layerTrails"><input id="layerTrails" type="checkbox" checked /><span class="check-ui"></span><span>Actual trajectories</span><span class="layer-glyph">⌁</span></label>
+        <label class="layer-toggle" data-guide="layerReference"><input id="layerReference" type="checkbox" checked /><span class="check-ui"></span><span>Reference trajectories</span><span class="layer-glyph">⌁</span></label>
+        <label class="layer-toggle" data-guide="layerCheckpoints"><input id="layerCheckpoints" type="checkbox" checked /><span class="check-ui"></span><span>Checkpoints</span><span class="layer-glyph">◇</span></label>
+        <label class="layer-toggle" data-guide="layerFaults"><input id="layerFaults" type="checkbox" checked /><span class="check-ui"></span><span>QA incident markers</span><span class="layer-glyph alert">!</span></label>
+        <label class="layer-toggle" data-guide="layerSeparation"><input id="layerSeparation" type="checkbox" checked /><span class="check-ui"></span><span>Air-line distance</span><span class="layer-glyph">↔</span></label>
+        <div class="rail-bottom"><div class="micro-label">ENVIRONMENT</div><div class="runtime-row"><span class="live-square"></span> LOCAL • SYNTHETIC DATA</div><div class="small-note"><span id="environmentNote">Real place labels and roads near Hranice, Czechia; ALL tracked units, checkpoints, movement records and events are fictional. Map tiles load online.</span></div></div>
+      </aside>
+      <main class="mainstage">
+        <section class="map-pane">
+          <div id="map" role="application" aria-label="Map with two fictional training entities; alternate illustrated offline basemap preserves their coordinates"></div>
+          <div class="map-shading"></div>
+          <div class="map-top-left">
+            <div class="eyebrow"><span class="cyan-bracket">[</span> LIVE SCENE REPLAY <span class="cyan-bracket">]</span></div>
+            <div class="scene-title">ECHO TRAINING SECTOR</div>
+            <div class="scene-desc"><span id="sceneLocation">REAL GEOGRAPHY · Czechia / Olomouc Region, near Hranice · fictional training replay</span></div>
+          </div>
+          <div class="map-top-right"><span class="status-led"></span><span id="mapHealth">MAP ENGINE INITIALIZING</span></div>
+          <div class="map-coordinate">DEMO COORDINATES <span id="coords">49.5710° N / 17.7350° E</span></div>
+          <div class="map-bottom-left"><div class="legend-heading">SYMBOLS & INDICATORS</div><div class="legend-row"><i class="legend-line cyan"></i> Actual path</div><div class="legend-row"><i class="legend-line reference"></i> Reference (offset)</div><div class="legend-row"><i class="legend-line red"></i> Invalid transition</div><div class="reference-legend-note">* Dashed reference shifted 6 screen px for visibility; raw coordinates unchanged.</div></div>
+          <div id="mapError" class="map-error hidden">Map failed to initialize. Check the terminal output and browser developer console.</div>
+        </section>
+        <div class="playback">
+          <div class="playback-row"><span class="panel-caption">TIMELINE CONTROL <span class="caption-divider">/</span> <span id="timelineScenario">ECHO-01</span></span><div class="playback-live"><span class="pulse-dot small"></span> REPLAY MODE</div></div>
+          <div class="transport"><button id="restart" class="icon-button" type="button" title="Restart replay" aria-label="Restart">↺</button><button id="togglePlay" class="play-button" type="button" aria-label="Play/Pause">▶</button><button id="step" class="icon-button" type="button" title="Step forward one second">▸|</button><span class="transport-time" id="elapsed">00:00</span><div class="time-scrubber"><input id="scrubber" type="range" min="0" max="120" value="0" step="0.05" aria-label="Replay time"/><div class="time-ticks"><span>00:00</span><span>00:30</span><span>01:00</span><span>01:30</span><span>02:00</span></div></div><span class="duration">/ 02:00</span><button id="speed" class="speed-button" type="button" title="Playback speed">1×</button></div>
+          <div class="timeline-hint"><span class="hint-item"><i class="hint-marker"></i> <span id="faultHint">FAULT INJECTION <b>T+ 01:05</b></span></span><span class="hint-item hint-right">RAW SOURCE <b>121 FRAMES / ENTITY</b></span></div>
+        </div>
+      </main>
+      <aside class="inspector">
+        <div class="rail-heading"><span>02</span> QA INSPECTION</div>
+        <div class="metric-grid"><div class="metric"><span>TEST STATUS</span><strong id="qaStatus">—</strong></div><div class="metric"><span>EVENT SAMPLES</span><strong id="sampleCount">—</strong></div><div class="metric"><span>VIOLATIONS</span><strong id="violationCount">—</strong></div><div class="metric"><span>RULE LIMIT</span><strong id="ruleLimit">90 <small>km/h</small></strong></div></div>
+        <div class="inspector-divider"></div>
+        <div class="subhead"><span>DETECTED FINDINGS</span><span id="findingTag" class="tiny-tag">RUN 02</span></div>
+        <div id="findingPanel" class="finding-panel"></div>
+        <div class="inspector-divider"></div>
+        <div class="subhead"><span>ENTITY INSPECTOR</span><span class="tiny-tag neutral">RAW / INTERPOLATED</span></div>
+        <div class="entity-list"><button id="entityA" class="entity-row" type="button"><span class="entity-badge">▰</span><span><strong>ECHO-ALPHA</strong><small>TRAINING BLUE / RECON VEHICLE</small></span><span class="entity-chevron">›</span></button><button id="entityB" class="entity-row selected" type="button"><span class="entity-badge blue">▰</span><span><strong>ECHO-BRAVO</strong><small>TRAINING RED / ARMOURED TRANSPORT</small></span><span class="entity-chevron">›</span></button></div>
+        <div class="batsim-separation-panel" data-guide="separationValue"><div class="batsim-separation-kicker">AIR-LINE DISTANCE · REPLAY</div><div class="batsim-separation-pair">ECHO-ALPHA <span>↔</span> ECHO-BRAVO</div><strong id="separationValue">—</strong><small id="separationMode">Display positions · not raw QA evidence</small><div class="batsim-separation-footnote">Horizontal straight-line measurement, not road distance. Synthetic replay only.</div></div>
+        <div id="entityDetails" class="entity-details"></div>
+        <div class="inspector-bottom"><button id="exportBtn" class="export-btn" type="button">⇩ <span>EXPORT QA EVIDENCE</span><span>▾</span></button><div class="small-note">Rule-based QA results generated by Python. UI interpolation does not modify source evidence.</div></div>
+      </aside>
+    </div>
+    <footer class="footer"><span>SIMULATION QA LAB / FICTIONAL QA DEMO</span><span>v1.0.0-rc.1 <i>•</i> SYNTHETIC DATA <i>•</i> NO LIVE FEED</span><span id="engineFooter">MAPLIBRE GL JS</span></footer>
+  </div>
+  <div id="guideInstructions" class="guide-instructions" hidden role="status">GUIDE MODE ON — hover over or focus a control to learn what it does. Press Esc or use the Guide button to exit.</div>
+  <aside id="guideTip" class="guide-tip" role="tooltip" hidden aria-live="polite"><strong id="guideTipTitle"></strong><p id="guideTipText"></p><button id="guideClose" type="button" hidden aria-label="Exit guide">Exit</button></aside>
+  <dialog id="exportDialog" class="export-dialog" aria-labelledby="exportTitle">
+    <div class="export-dialog-header">
+      <div><div class="dialog-eyebrow">SIMULATION QA LAB / LOCAL EVIDENCE</div><h2 id="exportTitle">Export QA evidence</h2></div>
+      <button id="exportClose" type="button" class="dialog-close" aria-label="Close export dialog">×</button>
+    </div>
+    <p class="dialog-description">Choose the output format. Your current reference or fault scenario will be exported using original telemetry, never visual interpolation.</p>
+    <fieldset class="export-options" aria-label="Export format">
+      <label><input type="radio" name="exportFormat" value="xlsx" checked><span><strong>Excel workbook (.xlsx)</strong><small>Summary, findings and 242 raw telemetry samples</small></span></label>
+      <label><input type="radio" name="exportFormat" value="csv"><span><strong>CSV (.csv)</strong><small>Original telemetry with QA result and finding markers</small></span></label>
+      <label><input type="radio" name="exportFormat" value="md"><span><strong>Markdown (.md)</strong><small>Human-readable QA report and reproduction steps</small></span></label>
+      <label><input type="radio" name="exportFormat" value="json"><span><strong>JSON (.json)</strong><small>Complete structured report and original source samples</small></span></label>
+    </fieldset>
+    <section class="issue-handoff" aria-labelledby="issueHandoffHeading">
+      <div class="issue-handoff-title"><span id="issueHandoffHeading">ISSUE TRACKER HANDOFF</span><span class="issue-handoff-badge">MANUAL / NO JIRA CONNECTION</span></div>
+      <p class="issue-handoff-notice">Copy the title and description into your team's tracker. The ZIP bundle contains both an annotated map PNG and a full-dashboard UI context PNG, plus Excel telemetry and original JSON. The demo intentionally injects the fault; it is not a defect reported against external software.</p>
+      <label for="issueSummaryText">Issue title / summary</label>
+      <textarea id="issueSummaryText" rows="2" readonly spellcheck="false"></textarea>
+      <button id="copyIssueTitle" class="dialog-secondary issue-copy-btn" type="button">Copy issue title</button>
+      <label for="issueDescriptionText">Issue description</label>
+      <textarea id="issueDescriptionText" rows="5" readonly spellcheck="false"></textarea>
+      <button id="copyIssueDescription" class="dialog-secondary issue-copy-btn" type="button">Copy issue description</button>
+      <button id="downloadIssueBundle" class="dialog-primary issue-bundle-btn" type="button">Save issue bundle (.zip + 2 PNG + XLSX + JSON)</button>
+    </section>
+    <p id="exportHint" class="dialog-hint">In Chrome on localhost, Save opens a system file picker. Other browsers may download to your configured Downloads folder.</p>
+    <p id="exportStatus" class="dialog-status" role="status" aria-live="polite"></p>
+    <div class="export-dialog-actions"><button id="exportCancel" type="button" class="dialog-secondary">Cancel</button><button id="exportSave" type="button" class="dialog-primary">Choose location &amp; save</button></div>
+  </dialog>
+  <script type="module" src="/app/main.js"></script>
+</body>
+</html>

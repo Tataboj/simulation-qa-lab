@@ -1,0 +1,12 @@
+/* VP-03.1 contextual help: ON by default, switchable, non-blocking. */
+.guide-toggle{min-height:34px;border:1px solid #4f9eae;color:#0c5971;background:#e1f4f6;padding:6px 12px;border-radius:5px;font:700 12px system-ui,sans-serif;cursor:pointer;white-space:nowrap}
+.guide-toggle[aria-pressed="true"]{background:#087a91;color:white;border-color:#005f74}
+html[data-theme="dark"] .guide-toggle{background:#123142;color:#9ee9fa;border-color:#3c7888}
+html[data-theme="dark"] .guide-toggle[aria-pressed="true"]{background:#207e96;color:#fff}
+.guide-instructions{position:fixed;z-index:120;top:58px;left:50%;transform:translateX(-50%);border:1px solid #2e8ca6;border-radius:7px;max-width:min(580px,calc(100vw - 28px));padding:10px 16px;background:#f2fbfd;color:#14475a;box-shadow:0 10px 30px #142f3f55;font:600 12px/1.5 system-ui,sans-serif;text-align:center;pointer-events:none}
+.guide-tip{position:fixed;z-index:130;pointer-events:none;background:#fffdf8;border:1px solid #438ba0;border-top:4px solid #008ca4;box-shadow:0 12px 36px #112d4270;border-radius:7px;padding:13px 15px;color:#173e51;font:13px/1.45 system-ui,sans-serif}
+.guide-tip strong{display:block;font-size:14px;margin:0 0 6px}.guide-tip p{margin:0}
+.guide-highlight{outline:3px solid #12a6b9!important;outline-offset:2px;box-shadow:0 0 0 6px #1c99bd36!important}
+html[data-theme="dark"] .guide-tip{background:#152d3c;border-color:#56b9ce;color:#e7f3fa}
+[hidden].guide-tip,[hidden].guide-instructions{display:none!important}
+@media(max-width:720px){.guide-toggle{padding:5px 8px;font-size:10px}.guide-instructions{font-size:11px;top:51px}}

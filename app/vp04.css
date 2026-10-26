@@ -1,0 +1,4 @@
+.vp04-domain{width:100%;box-sizing:border-box;border:1px solid #8eb2bc;background:#f6fbfc;color:#20485d;border-radius:5px;padding:11px 7px;font:600 12px system-ui,sans-serif;cursor:pointer;margin:5px 0 12px}html[data-theme="dark"] .vp04-domain{background:#143143;color:#e4f5fc;border-color:#366275}.vp04-domain:focus-visible{outline:3px solid #20a6b7}
+.vp04-checkpoint{display:flex;align-items:center;gap:5px;background:#def9e6;color:#195f39;border:2px solid #2b985f;border-radius:5px;box-shadow:0 2px 12px #17352b66;padding:5px;font:800 10px system-ui,sans-serif;cursor:pointer;white-space:nowrap}
+.vp04-checkpoint.missing-event{background:#fff1d6;border-color:#d45636;color:#aa321b}
+.vp04-checkpoint span{font-weight:800;letter-spacing:.02em}

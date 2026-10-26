@@ -1,0 +1,1722 @@
+{
+  "scenario_id": "ECHO-EV01",
+  "variant": "sequence_clean",
+  "description": "Fictional mission event-order validation. Original movement samples are unchanged.",
+  "duration_s": 120,
+  "events": [
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 0,
+      "lon": 17.714,
+      "lat": 49.56,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 0,
+      "lon": 17.728,
+      "lat": 49.578045,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 1,
+      "lon": 17.7140617,
+      "lat": 49.56002118,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 1,
+      "lon": 17.728047,
+      "lat": 49.57802891,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 2,
+      "lon": 17.71412339,
+      "lat": 49.56004235,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 2,
+      "lon": 17.72809398,
+      "lat": 49.57801265,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 3,
+      "lon": 17.71418504,
+      "lat": 49.56006352,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 3,
+      "lon": 17.72814094,
+      "lat": 49.57799621,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 4,
+      "lon": 17.71424665,
+      "lat": 49.56008466,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 4,
+      "lon": 17.72818787,
+      "lat": 49.5779796,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 5,
+      "lon": 17.71430819,
+      "lat": 49.56010577,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 5,
+      "lon": 17.72823474,
+      "lat": 49.57796282,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 6,
+      "lon": 17.71436965,
+      "lat": 49.56012686,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 6,
+      "lon": 17.72828155,
+      "lat": 49.57794587,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 7,
+      "lon": 17.71443102,
+      "lat": 49.5601479,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 7,
+      "lon": 17.72832829,
+      "lat": 49.57792876,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 8,
+      "lon": 17.71449227,
+      "lat": 49.5601689,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 8,
+      "lon": 17.72837494,
+      "lat": 49.57791149,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 9,
+      "lon": 17.7145534,
+      "lat": 49.56018984,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 9,
+      "lon": 17.7284215,
+      "lat": 49.57789407,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 10,
+      "lon": 17.71461439,
+      "lat": 49.56021073,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 10,
+      "lon": 17.72846794,
+      "lat": 49.57787649,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 11,
+      "lon": 17.71467523,
+      "lat": 49.56023156,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 11,
+      "lon": 17.72851427,
+      "lat": 49.57785878,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 12,
+      "lon": 17.7147359,
+      "lat": 49.56025232,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 12,
+      "lon": 17.72856046,
+      "lat": 49.57784093,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 13,
+      "lon": 17.71479639,
+      "lat": 49.560273,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 13,
+      "lon": 17.72860652,
+      "lat": 49.57782295,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 14,
+      "lon": 17.71485668,
+      "lat": 49.5602936,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 14,
+      "lon": 17.72865242,
+      "lat": 49.57780484,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 15,
+      "lon": 17.71491678,
+      "lat": 49.56031411,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 15,
+      "lon": 17.72869816,
+      "lat": 49.57778663,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 16,
+      "lon": 17.71497666,
+      "lat": 49.56033454,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 16,
+      "lon": 17.72874374,
+      "lat": 49.57776831,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 17,
+      "lon": 17.71503632,
+      "lat": 49.56035487,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 17,
+      "lon": 17.72878913,
+      "lat": 49.5777499,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 18,
+      "lon": 17.71509574,
+      "lat": 49.56037509,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 18,
+      "lon": 17.72883433,
+      "lat": 49.5777314,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 19,
+      "lon": 17.71515493,
+      "lat": 49.56039521,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 19,
+      "lon": 17.72887934,
+      "lat": 49.57771283,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 20,
+      "lon": 17.71521386,
+      "lat": 49.56041523,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 20,
+      "lon": 17.72892415,
+      "lat": 49.57769419,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 21,
+      "lon": 17.71527254,
+      "lat": 49.56043512,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 21,
+      "lon": 17.72896874,
+      "lat": 49.57767549,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 22,
+      "lon": 17.71533096,
+      "lat": 49.5604549,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 22,
+      "lon": 17.72901312,
+      "lat": 49.57765675,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 23,
+      "lon": 17.71538911,
+      "lat": 49.56047456,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 23,
+      "lon": 17.72905728,
+      "lat": 49.57763798,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 24,
+      "lon": 17.71544699,
+      "lat": 49.56049409,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 24,
+      "lon": 17.7291012,
+      "lat": 49.57761918,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 25,
+      "lon": 17.7155046,
+      "lat": 49.5605135,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 25,
+      "lon": 17.7291449,
+      "lat": 49.57760037,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 26,
+      "lon": 17.71556193,
+      "lat": 49.56053277,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 26,
+      "lon": 17.72918836,
+      "lat": 49.57758156,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 27,
+      "lon": 17.71561899,
+      "lat": 49.56055191,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 27,
+      "lon": 17.72923157,
+      "lat": 49.57756276,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 28,
+      "lon": 17.71567577,
+      "lat": 49.56057091,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 28,
+      "lon": 17.72927454,
+      "lat": 49.57754398,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 29,
+      "lon": 17.71573227,
+      "lat": 49.56058978,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 29,
+      "lon": 17.72931727,
+      "lat": 49.57752523,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 30,
+      "lon": 17.7157885,
+      "lat": 49.5606085,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 30,
+      "lon": 17.72935975,
+      "lat": 49.57750652,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 31,
+      "lon": 17.71584446,
+      "lat": 49.56062709,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 31,
+      "lon": 17.72940198,
+      "lat": 49.57748787,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 32,
+      "lon": 17.71590015,
+      "lat": 49.56064553,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 32,
+      "lon": 17.72944396,
+      "lat": 49.57746927,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 33,
+      "lon": 17.71595558,
+      "lat": 49.56066382,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 33,
+      "lon": 17.72948569,
+      "lat": 49.57745075,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 34,
+      "lon": 17.71601074,
+      "lat": 49.56068198,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 34,
+      "lon": 17.72952717,
+      "lat": 49.57743232,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 35,
+      "lon": 17.71606566,
+      "lat": 49.56069999,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 35,
+      "lon": 17.7295684,
+      "lat": 49.57741397,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 36,
+      "lon": 17.71612033,
+      "lat": 49.56071785,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 36,
+      "lon": 17.72960938,
+      "lat": 49.57739573,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 37,
+      "lon": 17.71617477,
+      "lat": 49.56073557,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 37,
+      "lon": 17.72965013,
+      "lat": 49.5773776,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 38,
+      "lon": 17.71622898,
+      "lat": 49.56075314,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 38,
+      "lon": 17.72969063,
+      "lat": 49.57735959,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 39,
+      "lon": 17.71628297,
+      "lat": 49.56077058,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 39,
+      "lon": 17.7297309,
+      "lat": 49.5773417,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 40,
+      "lon": 17.71633675,
+      "lat": 49.56078787,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 40,
+      "lon": 17.72977093,
+      "lat": 49.57732395,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 41,
+      "lon": 17.71639034,
+      "lat": 49.56080502,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 41,
+      "lon": 17.72981074,
+      "lat": 49.57730634,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 42,
+      "lon": 17.71644374,
+      "lat": 49.56082203,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 42,
+      "lon": 17.72985032,
+      "lat": 49.57728887,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 43,
+      "lon": 17.71649697,
+      "lat": 49.56083891,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 43,
+      "lon": 17.72988969,
+      "lat": 49.57727156,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 44,
+      "lon": 17.71655004,
+      "lat": 49.56085565,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 44,
+      "lon": 17.72992885,
+      "lat": 49.57725441,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 45,
+      "lon": 17.71660297,
+      "lat": 49.56087226,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 45,
+      "lon": 17.72996781,
+      "lat": 49.57723741,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 46,
+      "lon": 17.71665576,
+      "lat": 49.56088874,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 46,
+      "lon": 17.73000657,
+      "lat": 49.57722059,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 47,
+      "lon": 17.71670844,
+      "lat": 49.5609051,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 47,
+      "lon": 17.73004515,
+      "lat": 49.57720393,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 48,
+      "lon": 17.71676102,
+      "lat": 49.56092133,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 48,
+      "lon": 17.73008355,
+      "lat": 49.57718745,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 49,
+      "lon": 17.71681351,
+      "lat": 49.56093745,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 49,
+      "lon": 17.73012178,
+      "lat": 49.57717114,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 50,
+      "lon": 17.71686593,
+      "lat": 49.56095345,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 50,
+      "lon": 17.73015985,
+      "lat": 49.57715501,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 51,
+      "lon": 17.71691829,
+      "lat": 49.56096934,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 51,
+      "lon": 17.73019777,
+      "lat": 49.57713905,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 52,
+      "lon": 17.71697061,
+      "lat": 49.56098513,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 52,
+      "lon": 17.73023555,
+      "lat": 49.57712326,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 53,
+      "lon": 17.71702292,
+      "lat": 49.56100081,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 53,
+      "lon": 17.7302732,
+      "lat": 49.57710766,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 54,
+      "lon": 17.71707521,
+      "lat": 49.5610164,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 54,
+      "lon": 17.73031074,
+      "lat": 49.57709222,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 55,
+      "lon": 17.71712751,
+      "lat": 49.56103189,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 55,
+      "lon": 17.73034817,
+      "lat": 49.57707696,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 56,
+      "lon": 17.71717985,
+      "lat": 49.5610473,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 56,
+      "lon": 17.7303855,
+      "lat": 49.57706186,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 57,
+      "lon": 17.71723222,
+      "lat": 49.56106263,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 57,
+      "lon": 17.73042275,
+      "lat": 49.57704693,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 58,
+      "lon": 17.71728465,
+      "lat": 49.56107788,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 58,
+      "lon": 17.73045992,
+      "lat": 49.57703216,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 59,
+      "lon": 17.71733715,
+      "lat": 49.56109306,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 59,
+      "lon": 17.73049704,
+      "lat": 49.57701754,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 60,
+      "lon": 17.71738975,
+      "lat": 49.56110818,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 60,
+      "lon": 17.73053411,
+      "lat": 49.57700307,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 61,
+      "lon": 17.71744244,
+      "lat": 49.56112324,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 61,
+      "lon": 17.73057115,
+      "lat": 49.57698875,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 62,
+      "lon": 17.71749526,
+      "lat": 49.56113825,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 62,
+      "lon": 17.73060816,
+      "lat": 49.57697457,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 63,
+      "lon": 17.71754821,
+      "lat": 49.56115321,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 63,
+      "lon": 17.73064516,
+      "lat": 49.57696052,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 64,
+      "lon": 17.71760131,
+      "lat": 49.56116813,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 64,
+      "lon": 17.73068216,
+      "lat": 49.57694659,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 65,
+      "lon": 17.71765458,
+      "lat": 49.56118302,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 65,
+      "lon": 17.73071918,
+      "lat": 49.57693277,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 66,
+      "lon": 17.71770801,
+      "lat": 49.56119788,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 66,
+      "lon": 17.73075623,
+      "lat": 49.57691906,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 67,
+      "lon": 17.71776163,
+      "lat": 49.56121272,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 67,
+      "lon": 17.73079331,
+      "lat": 49.57690545,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 68,
+      "lon": 17.71781546,
+      "lat": 49.56122755,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 68,
+      "lon": 17.73083045,
+      "lat": 49.57689193,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 69,
+      "lon": 17.71786949,
+      "lat": 49.56124237,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 69,
+      "lon": 17.73086765,
+      "lat": 49.57687848,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 70,
+      "lon": 17.71792374,
+      "lat": 49.56125718,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 70,
+      "lon": 17.73090492,
+      "lat": 49.5768651,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 71,
+      "lon": 17.71797822,
+      "lat": 49.56127201,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 71,
+      "lon": 17.73094229,
+      "lat": 49.57685179,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 72,
+      "lon": 17.71803293,
+      "lat": 49.56128685,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 72,
+      "lon": 17.73097975,
+      "lat": 49.57683851,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 73,
+      "lon": 17.7180879,
+      "lat": 49.5613017,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 73,
+      "lon": 17.73101732,
+      "lat": 49.57682528,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 74,
+      "lon": 17.71814311,
+      "lat": 49.56131658,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 74,
+      "lon": 17.73105502,
+      "lat": 49.57681207,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 75,
+      "lon": 17.71819859,
+      "lat": 49.5613315,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 75,
+      "lon": 17.73109284,
+      "lat": 49.57679888,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 76,
+      "lon": 17.71825433,
+      "lat": 49.56134645,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 76,
+      "lon": 17.73113081,
+      "lat": 49.57678569,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 77,
+      "lon": 17.71831034,
+      "lat": 49.56136145,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 77,
+      "lon": 17.73116894,
+      "lat": 49.5767725,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 78,
+      "lon": 17.71836662,
+      "lat": 49.56137649,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 78,
+      "lon": 17.73120722,
+      "lat": 49.57675929,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 79,
+      "lon": 17.71842317,
+      "lat": 49.5613916,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 79,
+      "lon": 17.73124568,
+      "lat": 49.57674604,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 80,
+      "lon": 17.71848,
+      "lat": 49.56140676,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 80,
+      "lon": 17.73128432,
+      "lat": 49.57673276,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 81,
+      "lon": 17.71853711,
+      "lat": 49.561422,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 81,
+      "lon": 17.73132315,
+      "lat": 49.57671944,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 82,
+      "lon": 17.71859449,
+      "lat": 49.56143731,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 82,
+      "lon": 17.73136217,
+      "lat": 49.57670605,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 83,
+      "lon": 17.71865215,
+      "lat": 49.5614527,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 83,
+      "lon": 17.7314014,
+      "lat": 49.57669258,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 84,
+      "lon": 17.71871008,
+      "lat": 49.56146817,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 84,
+      "lon": 17.73144084,
+      "lat": 49.57667904,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 85,
+      "lon": 17.71876829,
+      "lat": 49.56148374,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 85,
+      "lon": 17.7314805,
+      "lat": 49.57666541,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 86,
+      "lon": 17.71882675,
+      "lat": 49.5614994,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 86,
+      "lon": 17.73152038,
+      "lat": 49.57665168,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 87,
+      "lon": 17.71888548,
+      "lat": 49.56151516,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 87,
+      "lon": 17.73156049,
+      "lat": 49.57663784,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 88,
+      "lon": 17.71894446,
+      "lat": 49.56153102,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 88,
+      "lon": 17.73160084,
+      "lat": 49.57662389,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 89,
+      "lon": 17.71900369,
+      "lat": 49.561547,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 89,
+      "lon": 17.73164142,
+      "lat": 49.57660981,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 90,
+      "lon": 17.71906316,
+      "lat": 49.56156309,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 90,
+      "lon": 17.73168225,
+      "lat": 49.5765956,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 91,
+      "lon": 17.71912286,
+      "lat": 49.5615793,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 91,
+      "lon": 17.73172332,
+      "lat": 49.57658125,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 92,
+      "lon": 17.71918278,
+      "lat": 49.56159562,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 92,
+      "lon": 17.73176463,
+      "lat": 49.57656675,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 93,
+      "lon": 17.71924291,
+      "lat": 49.56161208,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 93,
+      "lon": 17.73180619,
+      "lat": 49.57655211,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 94,
+      "lon": 17.71930325,
+      "lat": 49.56162866,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 94,
+      "lon": 17.73184801,
+      "lat": 49.5765373,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 95,
+      "lon": 17.71936377,
+      "lat": 49.56164537,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 95,
+      "lon": 17.73189007,
+      "lat": 49.57652234,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 96,
+      "lon": 17.71942447,
+      "lat": 49.56166221,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 96,
+      "lon": 17.73193238,
+      "lat": 49.57650721,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 97,
+      "lon": 17.71948534,
+      "lat": 49.5616792,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 97,
+      "lon": 17.73197495,
+      "lat": 49.57649191,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 98,
+      "lon": 17.71954636,
+      "lat": 49.56169631,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 98,
+      "lon": 17.73201775,
+      "lat": 49.57647644,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 99,
+      "lon": 17.71960751,
+      "lat": 49.56171357,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 99,
+      "lon": 17.73206081,
+      "lat": 49.57646079,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 100,
+      "lon": 17.71966879,
+      "lat": 49.56173097,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 100,
+      "lon": 17.73210411,
+      "lat": 49.57644498,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 101,
+      "lon": 17.71973017,
+      "lat": 49.56174852,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 101,
+      "lon": 17.73214765,
+      "lat": 49.57642898,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 102,
+      "lon": 17.71979165,
+      "lat": 49.5617662,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 102,
+      "lon": 17.73219142,
+      "lat": 49.57641281,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 103,
+      "lon": 17.7198532,
+      "lat": 49.56178403,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 103,
+      "lon": 17.73223542,
+      "lat": 49.57639647,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 104,
+      "lon": 17.71991482,
+      "lat": 49.56180201,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 104,
+      "lon": 17.73227965,
+      "lat": 49.57637995,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 105,
+      "lon": 17.71997648,
+      "lat": 49.56182013,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 105,
+      "lon": 17.73232411,
+      "lat": 49.57636326,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 106,
+      "lon": 17.72003817,
+      "lat": 49.56183839,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 106,
+      "lon": 17.73236877,
+      "lat": 49.5763464,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 107,
+      "lon": 17.72009987,
+      "lat": 49.5618568,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 107,
+      "lon": 17.73241365,
+      "lat": 49.57632937,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 108,
+      "lon": 17.72016158,
+      "lat": 49.56187535,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 108,
+      "lon": 17.73245872,
+      "lat": 49.57631219,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 109,
+      "lon": 17.72022326,
+      "lat": 49.56189404,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 109,
+      "lon": 17.73250399,
+      "lat": 49.57629484,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 110,
+      "lon": 17.7202849,
+      "lat": 49.56191288,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 110,
+      "lon": 17.73254945,
+      "lat": 49.57627735,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 111,
+      "lon": 17.7203465,
+      "lat": 49.56193185,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 111,
+      "lon": 17.73259508,
+      "lat": 49.57625971,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 112,
+      "lon": 17.72040803,
+      "lat": 49.56195096,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 112,
+      "lon": 17.73264087,
+      "lat": 49.57624193,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 113,
+      "lon": 17.72046947,
+      "lat": 49.5619702,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 113,
+      "lon": 17.73268683,
+      "lat": 49.57622401,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 114,
+      "lon": 17.72053082,
+      "lat": 49.56198957,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 114,
+      "lon": 17.73273293,
+      "lat": 49.57620597,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 115,
+      "lon": 17.72059205,
+      "lat": 49.56200908,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 115,
+      "lon": 17.73277917,
+      "lat": 49.57618782,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 116,
+      "lon": 17.72065315,
+      "lat": 49.5620287,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 116,
+      "lon": 17.73282554,
+      "lat": 49.57616956,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 117,
+      "lon": 17.72071412,
+      "lat": 49.56204846,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 117,
+      "lon": 17.73287202,
+      "lat": 49.57615119,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 118,
+      "lon": 17.72077492,
+      "lat": 49.56206833,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 118,
+      "lon": 17.73291861,
+      "lat": 49.57613274,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 119,
+      "lon": 17.72083556,
+      "lat": 49.56208831,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 119,
+      "lon": 17.73296529,
+      "lat": 49.5761142,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "t": 120,
+      "lon": 17.72089601,
+      "lat": 49.56210841,
+      "source": "SYNTHETIC_REPLAY"
+    },
+    {
+      "entity_id": "ECHO-BRAVO",
+      "t": 120,
+      "lon": 17.73301206,
+      "lat": 49.5760956,
+      "source": "SYNTHETIC_REPLAY"
+    }
+  ],
+  "scenario_events": [
+    {
+      "entity_id": "ECHO-ALPHA",
+      "event_type": "OBJECTIVE_STARTED",
+      "t": 45,
+      "source": "SYNTHETIC_EVENT_LOG"
+    },
+    {
+      "entity_id": "ECHO-ALPHA",
+      "event_type": "OBJECTIVE_COMPLETED",
+      "t": 85,
+      "source": "SYNTHETIC_EVENT_LOG"
+    }
+  ],
+  "qa": {
+    "status": "PASS",
+    "checked": 242,
+    "findings": [],
+    "event_checked": 2
+  }
+}

@@ -1,0 +1,276 @@
+/* VP-01.1 Daylight Mission Atlas. Intentional opt-in theme: default on,
+   dark legacy appearance retained via [data-theme="dark"].
+   Preserve map QA contrast and do not alter source data. */
+html[data-theme="daylight"] {
+  color: #203445;
+  background: #eaf0ef;
+}
+html[data-theme="daylight"] .topbar {
+  background: #ffffff;
+  border-bottom: 1px solid #cbd9d9;
+  box-shadow: 0 2px 12px #2c455011;
+}
+html[data-theme="daylight"] .brand-mark {
+  background: #e4f2f2;
+  border-color: #bad6da;
+  color: #146f80;
+}
+html[data-theme="daylight"] .brand-title {color: #162b3b;}
+html[data-theme="daylight"] .brand-title b {color: #57707e;}
+html[data-theme="daylight"] .brand-sub {color: #566f7d; font-size: 10px;}
+html[data-theme="daylight"] .header-meta {color: #44616c; font-size: 11px;}
+html[data-theme="daylight"] .header-separator {background: #cad8d8;}
+html[data-theme="daylight"] .header-clock {
+  background: #e6f5f5;
+  border: 1px solid #b6d4d7;
+  color: #075b6d;
+}
+.theme-toggle {
+  flex-shrink: 0;
+  border: 1px solid #45616d;
+  background: #182a37;
+  color: #e9f5f5;
+  padding: 10px 14px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .1px;
+  white-space: nowrap;
+  transition: background .12s ease, border-color .12s ease;
+}
+.theme-toggle:hover {border-color: #5ccbd5;}
+html[data-theme="daylight"] .theme-toggle {
+  border-color: #b7ccd1;
+  background: #f1f7f8;
+  color: #174d5e;
+}
+html[data-theme="daylight"] .theme-toggle:hover {background: #e0eff1; border-color: #79b4c0;}
+html[data-theme="daylight"] .rail,
+html[data-theme="daylight"] .inspector {
+  background: #f4f7f8;
+  border-color: #cbd9df;
+}
+html[data-theme="daylight"] .rail-heading {color: #1d3543; font-size: 12px;}
+html[data-theme="daylight"] .rail-heading span {
+  color: #0d5e72; background: #d9edef; border-color: #add0d7;
+}
+html[data-theme="daylight"] .section-title,
+html[data-theme="daylight"] .subhead {color: #4a6473; font-size: 11px;}
+html[data-theme="daylight"] .mission-select {
+  background: #fff;
+  border-color: #bed0d8;
+  box-shadow: 0 2px 5px #1a354609;
+}
+html[data-theme="daylight"] .mission-icon {color: #147186;}
+html[data-theme="daylight"] .mission-select strong,
+html[data-theme="daylight"] .variant strong,
+html[data-theme="daylight"] .entity-row strong {color: #193342; font-size: 13px;}
+html[data-theme="daylight"] .mission-select small,
+html[data-theme="daylight"] .variant small,
+html[data-theme="daylight"] .entity-row small {color: #526e7c; font-size: 11px;}
+html[data-theme="daylight"] .chev {color: #497282;}
+html[data-theme="daylight"] .variant {
+  background: #fff;
+  border-color: #cfdbdf;
+  min-height: 54px;
+}
+html[data-theme="daylight"] .variant.active {background: #fff0df; border-color: #d78a36; box-shadow: inset 3px 0 #e28e33;}
+html[data-theme="daylight"] #btnClean.active {background: #e8f6ef; border-color: #329a73; box-shadow: inset 3px 0 #329a73;}
+html[data-theme="daylight"] .variant:hover {border-color: #579caa;}
+html[data-theme="daylight"] .variant-icon.good {background: #d9f3e5; color: #126849;}
+html[data-theme="daylight"] .variant-icon.bad {background: #fae0c5; color: #9d5011;}
+html[data-theme="daylight"] .variant-end {color: #6e8894;}
+html[data-theme="daylight"] .layer-toggle {color: #254354; font-size: 12.5px; min-height: 39px;}
+html[data-theme="daylight"] .check-ui {background: #fff; border-color: #819eaa;}
+html[data-theme="daylight"] .layer-toggle input:checked+.check-ui {background: #0a7a91; border-color: #087089;}
+html[data-theme="daylight"] .layer-toggle input:checked+.check-ui:after {color: white;}
+html[data-theme="daylight"] .layer-glyph {color: #11728b;}
+html[data-theme="daylight"] .layer-glyph.alert {color: #c85b22;}
+html[data-theme="daylight"] .rail-bottom {border-color: #c9d7dc;}
+html[data-theme="daylight"] .micro-label {color: #526d7a; font-size: 10px;}
+html[data-theme="daylight"] .runtime-row {color: #1a7966; font-size: 10px;}
+html[data-theme="daylight"] .small-note {color: #526a77; font-size: 11px; line-height: 1.5;}
+html[data-theme="daylight"] .mainstage {background: #eef3ef;}
+html[data-theme="daylight"] .map-pane #map {background: #e8eee7;}
+html[data-theme="daylight"] .map-shading {
+  background: linear-gradient(180deg, #f8fcfbd1 0%, #f7faf922 23%, transparent 72%, #e6efeb4d 100%);
+}
+html[data-theme="daylight"] .eyebrow {color: #246777; font-size: 10px; text-shadow: 0 1px 2px #fff;}
+html[data-theme="daylight"] .cyan-bracket {color: #008ba4;}
+html[data-theme="daylight"] .scene-title {color: #18394a; text-shadow: 0 1px 3px #fff;}
+html[data-theme="daylight"] .scene-desc {color: #3d6068; font-size: 11px; text-shadow: 0 1px 2px #fff;}
+html[data-theme="daylight"] .scene-desc span {color: #11869b;}
+html[data-theme="daylight"] .map-top-right {
+  background: #fffefaeb; border-color: #bdced0; color: #25515d;
+  box-shadow: 0 3px 10px #233b461a; font-size: 10px;
+}
+html[data-theme="daylight"] .map-coordinate {
+  background: #fffefaeb; border-color: #b4cbd0; color: #536c7a;
+  box-shadow: 0 2px 8px #283d4422;
+}
+html[data-theme="daylight"] .map-coordinate span {color: #163b4b;}
+html[data-theme="daylight"] .map-bottom-left {
+  background: #fffefaf0; border: 1px solid #b7cbd0;
+  box-shadow: 0 4px 15px #243e4e25;
+}
+html[data-theme="daylight"] .legend-heading {color: #506b76;}
+html[data-theme="daylight"] .legend-row {color: #294757; font-size: 10.5px;}
+html[data-theme="daylight"] .legend-line.cyan {background: #087aab;}
+html[data-theme="daylight"] .legend-line.reference {border-top-color: #996322;}
+html[data-theme="daylight"] .legend-line.red {border-top-color: #d94b2d;}
+html[data-theme="daylight"] .playback {
+  border-color: #bfd1d8; background: #fff;
+  box-shadow: 0 -2px 15px #1f3f4911;
+}
+html[data-theme="daylight"] .panel-caption {color: #314f5f; font-size: 11px;}
+html[data-theme="daylight"] .caption-divider {color: #8aa1aa;}
+html[data-theme="daylight"] .playback-live {color: #51717f; font-size: 10px;}
+html[data-theme="daylight"] .icon-button,
+html[data-theme="daylight"] .speed-button {background: #edf5f7; border-color: #b5cbd2; color: #254858;}
+html[data-theme="daylight"] .play-button {background: #0c8198; border-color: #07788b; color: #fff;}
+html[data-theme="daylight"] .transport-time {color: #164455;}
+html[data-theme="daylight"] .duration {color: #68818e;}
+html[data-theme="daylight"] .time-ticks {color: #597582; font-size: 10px;}
+html[data-theme="daylight"] .time-scrubber input {accent-color: #087e98;}
+html[data-theme="daylight"] .hint-item {color: #587483; font-size: 10px;}
+html[data-theme="daylight"] .hint-item b {color: #a34b17;}
+html[data-theme="daylight"] .hint-right b {color: #246977;}
+html[data-theme="daylight"] .metric {
+  background: #fff; border-color: #cad9df; min-height: 85px;
+  box-shadow: 0 2px 6px #25455009;
+}
+html[data-theme="daylight"] .metric>span {color: #52707e; font-size: 10px;}
+html[data-theme="daylight"] .metric strong {color: #1a3b4a;}
+html[data-theme="daylight"] .metric strong.bad {color: #be492f;}
+html[data-theme="daylight"] .metric strong.good {color: #087c5e;}
+html[data-theme="daylight"] .metric small {color: #506f7d;}
+html[data-theme="daylight"] .inspector-divider {background: #ccd9df; margin: 22px 0 17px;}
+html[data-theme="daylight"] .tiny-tag {background: #fff0e0; color: #a44c18; border-color: #dfb186;}
+html[data-theme="daylight"] .tiny-tag.neutral {background: #eaf3f5; color: #345c6a; border-color: #bbd0d9;}
+html[data-theme="daylight"] .finding-panel {
+  background: #fff4e9; border-color: #dba780; border-left-color: #d57228;
+}
+html[data-theme="daylight"] .finding-panel.good {
+  background: #eaf8f0; border-color: #9ad0b0; border-left-color: #238b64;
+}
+html[data-theme="daylight"] .finding-label {color: #9f4316; font-size: 11px;}
+html[data-theme="daylight"] .finding-panel.good .finding-label {color: #14774e;}
+html[data-theme="daylight"] .finding-title {color: #263844; font-size: 15px;}
+html[data-theme="daylight"] .finding-desc {color: #485d67; font-size: 12px;}
+html[data-theme="daylight"] .finding-meta {color: #6a5d50; font-size: 10.5px;}
+html[data-theme="daylight"] .small-action {background: #fff4e8; border-color: #c77e49; color: #93400e; font-size: 10px;}
+html[data-theme="daylight"] .small-action:hover {background: #ffe8d0;}
+html[data-theme="daylight"] .entity-row {background: #fff; border-color: #c9d9df; min-height: 55px;}
+html[data-theme="daylight"] .entity-row.selected {background: #e7f5f8; border-color: #268ea1;}
+html[data-theme="daylight"] .entity-chevron {color: #437182;}
+html[data-theme="daylight"] .entity-details {background: #fff; border-color: #c7d8de;}
+html[data-theme="daylight"] .detail-row {border-bottom-color: #e0e8ed; font-size: 11px;}
+html[data-theme="daylight"] .detail-row span:first-child {color: #4b6572;}
+html[data-theme="daylight"] .detail-row span:last-child {color: #153e50; font-weight: 600;}
+html[data-theme="daylight"] .export-btn {background: #0f6b82; border-color: #0b647a; color: white; font-size: 11px;}
+html[data-theme="daylight"] .export-btn:hover {background: #085569;}
+html[data-theme="daylight"] .footer {background: #e9f0f2; color: #4b6976; border-color: #c8d8df; font-size: 10px;}
+html[data-theme="daylight"] .footer i {color: #95acb6;}
+html[data-theme="daylight"] .entity-pin:after {background: #fcfffe; color: #184759; border-color: #6995a5; box-shadow: 0 1px 5px #234d5a55;}
+html[data-theme="daylight"] .entity-pin.selected:after {color: #075e78; border-color: #1494b1;}
+html[data-theme="daylight"] .fault-pin {background: #bc4c28; border-color: #fff2df; color: #fff;}
+html[data-theme="daylight"] .checkpoint-pin {background: #faf4d6; border-color: #8c6724;}
+html[data-theme="daylight"] .maplibregl-control-container .maplibregl-ctrl-group {background: #fff; border-color: #a9c3ca; box-shadow: 0 2px 8px #29455322;}
+html[data-theme="daylight"] .maplibregl-ctrl-group button {color: #274c5e;}
+html[data-theme="daylight"] .maplibregl-ctrl button .maplibregl-ctrl-icon {filter: none;}
+html[data-theme="daylight"] .maplibregl-ctrl-group button+button {border-top-color: #c5d7dc;}
+@media (max-width: 1180px) {
+  html[data-theme="daylight"] .brand-sub {font-size: 9px;}
+  html[data-theme="daylight"] .rail-heading {font-size: 11px;}
+}
+@media (max-width: 900px) {
+  .theme-toggle {padding: 8px 9px; font-size: 11px;}
+}
+
+/* Layout correctness applies to BOTH themes. A long QA finding must scroll,
+   never shrink into the next panel on shorter windows / zoomed displays. */
+.inspector > .metric-grid,
+.inspector > .inspector-divider,
+.inspector > .subhead,
+.inspector > .finding-panel,
+.inspector > .entity-list,
+.inspector > .entity-details,
+.inspector > .inspector-bottom {
+  flex-shrink: 0;
+}
+
+
+/* Export dialog: usable in both daylight and night mode, keyboard accessible. */
+.export-dialog{border:1px solid #a9c1cb;border-radius:12px;padding:0;width:min(520px,calc(100vw - 28px));max-height:min(86vh,720px);overflow:auto;color:#193849;background:#f9fcfc;box-shadow:0 18px 80px #07162290;font:14px 'DM Sans',Segoe UI,sans-serif}
+.export-dialog::backdrop{background:#06131db5;backdrop-filter:blur(3px)}
+.export-dialog-header{display:flex;justify-content:space-between;align-items:start;padding:23px 25px 12px;gap:10px}
+.export-dialog h2{font-size:23px;line-height:1.25;margin:5px 0 0;color:#153544}
+.dialog-eyebrow{font:10px 'IBM Plex Mono',monospace;letter-spacing:1px;color:#2b7180}
+.dialog-close{border:1px solid #c4d5da;background:white;color:#395b68;border-radius:6px;padding:4px 12px;font-size:24px;line-height:1.3}
+.dialog-description,.dialog-hint,.dialog-status{margin:0 25px 15px;line-height:1.5;font-size:13px;color:#526d7a}
+.export-options{border:0;margin:0 25px 18px;padding:0;display:grid;gap:8px}
+.export-options label{display:flex;gap:12px;align-items:center;border:1px solid #d1dfe3;background:white;border-radius:7px;padding:12px;cursor:pointer}
+.export-options label:has(input:checked){border-color:#13819a;background:#e7f7f9}
+.export-options input{accent-color:#0c7892;width:18px;height:18px;flex-shrink:0}
+.export-options strong{display:block;color:#193e4c;font-size:14px}
+.export-options small{display:block;color:#54707c;margin-top:4px;font-size:12px}
+.dialog-hint{padding:10px 12px;border-radius:5px;background:#e9f3f7;font-size:12px}
+.dialog-status{min-height:19px;color:#185b6d}
+.export-dialog-actions{border-top:1px solid #d1e0e3;padding:16px 25px 22px;display:flex;gap:10px;justify-content:end}
+.dialog-secondary,.dialog-primary{padding:11px 14px;font-weight:700;border-radius:6px}
+.dialog-secondary{border:1px solid #bdcfd3;color:#315564;background:white}
+.dialog-primary{border:1px solid #0c6a81;background:#0c7892;color:white}
+.dialog-primary:disabled{opacity:.55;cursor:wait}
+@media (max-width:560px){.export-dialog-header{padding:18px 16px 12px}.dialog-description,.dialog-hint,.dialog-status{margin-left:16px;margin-right:16px}.export-options{margin-left:16px;margin-right:16px}.export-dialog-actions{padding:14px 16px}}
+html[data-theme="dark"] .export-dialog{background:#102532;color:#e4f0f1;border-color:#355362}
+html[data-theme="dark"] .export-dialog h2,html[data-theme="dark"] .export-options strong{color:#e4f0f1}
+html[data-theme="dark"] .export-options label{background:#1c3641;border-color:#3a5c69}
+html[data-theme="dark"] .export-options label:has(input:checked){background:#194456;border-color:#4bc3d3}
+html[data-theme="dark"] .dialog-description,html[data-theme="dark"] .dialog-hint,html[data-theme="dark"] .export-options small{color:#c1d5df}
+html[data-theme="dark"] .dialog-hint{background:#1a3543}
+html[data-theme="dark"] .dialog-close,html[data-theme="dark"] .dialog-secondary{background:#163440;color:#e5f2f4;border-color:#466775}
+html[data-theme="dark"] .export-dialog-actions{border-top-color:#355362}
+
+/* Issue tracker handoff: purposeful scroll and readable copy-paste controls. */
+.export-dialog {max-height:min(92vh,900px);overflow-y:auto;overscroll-behavior:contain;}
+.issue-handoff {margin:15px 0 12px;padding:13px;border:1px solid #bfced4;border-radius:7px;background:rgba(219,233,238,.35);display:flex;flex-direction:column;gap:7px;}
+.issue-handoff-title {display:flex;justify-content:space-between;align-items:center;gap:7px;font-size:12px;font-weight:800;letter-spacing:.6px;}
+.issue-handoff-badge {font-size:9px;letter-spacing:0;white-space:nowrap;color:#667d89;}
+.issue-handoff-notice {font:12px/1.5 system-ui,sans-serif;margin:1px 0 6px;color:#375668;}
+.issue-handoff label {font:600 11px/1.3 system-ui,sans-serif;color:#164053;}
+.issue-handoff textarea {resize:vertical;width:100%;min-height:42px;padding:8px;border:1px solid #9cb3c0;border-radius:5px;background:white;color:#173348;font:12px/1.45 Consolas,monospace;box-sizing:border-box;}
+.issue-handoff #issueDescriptionText {min-height:110px;}
+.issue-copy-btn {align-self:flex-start;min-height:30px;}
+.issue-bundle-btn {margin-top:4px;min-height:38px;width:100%;white-space:normal;}
+.issue-handoff button:disabled {opacity:.45;cursor:not-allowed;}
+:root[data-theme="dark"] .issue-handoff {background:#112738;border-color:#355269;}
+:root[data-theme="dark"] .issue-handoff label,:root[data-theme="dark"] .issue-handoff-title {color:#d6eaf5;}
+:root[data-theme="dark"] .issue-handoff-notice,:root[data-theme="dark"] .issue-handoff-badge {color:#b0c5d0;}
+:root[data-theme="dark"] .issue-handoff textarea {background:#0e1b27;color:#eef7f9;border-color:#486073;}
+
+/* VP-02 identity and real-world map controls */
+.vp02-map-toggle{width:100%;border:1px solid #598392;border-radius:5px;background:#233a49;color:#f0fbff;text-align:left;font-size:12px;font-weight:800;padding:12px;cursor:pointer}
+.vp02-map-toggle:hover,.vp02-map-toggle:focus-visible{outline:2px solid #72c4df;outline-offset:1px}
+.vp02-map-hint{font-size:10px;line-height:1.5;color:#93b3c0;padding:8px 1px 0}
+html[data-theme="daylight"] .vp02-map-toggle{background:#fff;color:#174f63;border-color:#b0cbd2}
+html[data-theme="daylight"] .vp02-map-hint{color:#536d7c}
+.vp02-legend{font-size:11px;line-height:1.5;margin:4px 0;color:inherit}
+.vp02-symbol{font-size:16px;font-weight:900;margin-right:4px;text-shadow:0 1px 1px #fff}
+.vp02-symbol.faction-blue{color:#138bc7}.vp02-symbol.faction-red{color:#d75043}
+.vp02-identity{display:grid;gap:5px;padding:10px 8px 11px;background:#ecf5fa;border:1px solid #93c8dc;border-left:4px solid #138bc7;margin-bottom:8px;color:#204153;font-size:11px}
+.vp02-identity small{font-size:10px;line-height:1.4}.vp02-identity.faction-red{background:#fff3ee;border-color:#eeb7a7;border-left-color:#d75043}
+html[data-theme="dark"] .vp02-identity{background:#142b38;border-color:#346883;color:#d6ebf3}
+html[data-theme="dark"] .vp02-identity.faction-red{background:#3b2727;border-color:#81524a}
+.entity-pin.faction-blue{filter:drop-shadow(0 2px 4px #17577eaa)}
+.entity-pin.faction-red{filter:drop-shadow(0 2px 4px #852f2eaa)}
+
+/* Training faction markers and classification badges */
+#entityA .entity-badge{background:#e3f1fb;color:#157cb5;border:1px solid #91bee1}
+#entityB .entity-badge{background:#fff0eb;color:#bb493f;border:1px solid #e6a49b}
+html[data-theme="dark"] #entityA .entity-badge{background:#16354b;color:#6cc6ed}
+html[data-theme="dark"] #entityB .entity-badge{background:#422a29;color:#f7aea5}
+.vp02-map-toggle:disabled{opacity:.55;cursor:progress}
+
+/* VP-07.1 baseline legend: display-only 6px lateral offset, not source-data relocation. */
+html[data-theme="daylight"] .legend-line.reference{border-top-color:#8b4513;}
+html[data-theme="daylight"] .reference-legend-note{color:#536f7c;}

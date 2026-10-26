@@ -1,0 +1,13 @@
+/* VP-04.1: readable distance overlay, responsive to replay time. */
+.batsim-distance-pill{background:rgba(255,255,255,.96);border:2px solid #794cac;color:#3b265b;border-radius:8px;padding:7px 10px;white-space:nowrap;font:800 13px 'IBM Plex Mono',monospace;box-shadow:0 3px 14px #172e3b40;pointer-events:none}
+html[data-theme="dark"] .batsim-distance-pill{background:#152631f2;color:#e8d9ff;border-color:#b698ef}
+.batsim-separation-panel{margin:11px 0 13px;padding:12px;border:1px solid #8db6bf;border-left:4px solid #7852a5;border-radius:5px;background:#ffffff;color:#173748}
+.batsim-separation-kicker{color:#566d7a;font:700 10px 'IBM Plex Mono',monospace;letter-spacing:.08em}
+.batsim-separation-pair{font-size:11px;font-weight:700;margin-top:8px;color:#425c67}
+.batsim-separation-pair span{color:#7951aa;font-size:16px}
+.batsim-separation-panel strong{font:800 23px 'IBM Plex Mono',monospace;display:block;margin:6px 0;color:#50347c}
+.batsim-separation-panel small{font-size:11px;color:#456678;display:block}
+.batsim-separation-footnote{font-size:10px;line-height:1.4;color:#647b83;border-top:1px solid #d5e2e5;padding-top:7px;margin-top:8px}
+html[data-theme="dark"] .batsim-separation-panel{background:#132a37;color:#e8eff5;border-color:#487488;border-left-color:#b698ef}
+html[data-theme="dark"] .batsim-separation-panel strong{color:#d5b9ff}
+html[data-theme="dark"] .batsim-separation-panel small,html[data-theme="dark"] .batsim-separation-footnote,html[data-theme="dark"] .batsim-separation-kicker,html[data-theme="dark"] .batsim-separation-pair{color:#b8ced9}
