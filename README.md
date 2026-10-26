@@ -60,4 +60,4 @@ This is an independent, privately developed software-testing demo. It does not c
 
 **License:** [MIT](LICENSE) for original project code and assets, subject to the rights held by the copyright holder. See [third-party notices](THIRD_PARTY_NOTICES.md) for external software, maps and fonts.
 
-The GitHub Pages site has not been deployed or accepted. Public visibility, hosted deployment, and a v1.0.0 release require separate owner approval.
+The hosted GitHub Pages site has not been deployed or accepted. Public visibility, hosted deployment, and a v1.0.0 release require separate owner approval.
