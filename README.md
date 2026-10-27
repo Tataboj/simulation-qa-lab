@@ -8,9 +8,9 @@ A browser-based QA exercise for deterministic simulation telemetry and event log
 
 ## Try it
 
-**Windows:** extract the project and double-click `START_WINDOWS.cmd`. The launcher installs the locked dependencies and prints a localhost address. Keep the terminal open while using the app.
+**Windows:** extract the project and double-click `START_WINDOWS.cmd`. The launcher uses `node` and `npm` from your Windows `PATH`, installs the locked dependencies, and prints a localhost address. Keep the terminal open while using the app. If `node` or `npm` is not recognized, configure the Node.js/npm command path first; Windows-launcher compatibility remains a separate pre-release acceptance item (RG-02).
 
-**Terminal (Node.js 22+):** from the project directory:
+**Terminal (Node.js 22.12+ with npm, or another Node.js version supported by Vite 7.3.7):** from the project directory:
 
 ```sh
 npm ci
@@ -50,7 +50,7 @@ npm audit
 npm run build
 ```
 
-As of 2026-10-26, acceptance evidence includes 16 Python tests, 110 JavaScript tests, all six deterministic scenario fixtures, a clean Windows `npm ci` installation, and a successful `npm run build:pages` production build. GitHub QA workflow #4 passed for commit `d5aa2bf`; the manually triggered Pages deployment #2 for that commit also passed. A real Chrome/Windows ECHO-01 `POSITION_JUMP` issue export produced a readable seven-file ZIP; 242 Excel telemetry records matched the JSON source records. This observed browser acceptance covers that movement-fault export, not an exhaustive cross-browser or all-scenarios matrix. The included lockfile has SHA-256 `50CE46B21D9B62ECE126E4F5A397DFA229E7A21BB907481B908C785D5AFE24FA`.
+As of 2026-10-26, acceptance evidence includes **16 Python tests, 117 JavaScript tests, and all six deterministic scenario fixtures**. GitHub QA workflow #7 passed for commit `9344071`; the manually triggered Pages deployment #4 for that commit also passed. That CI run reported **0 known vulnerabilities** from `npm audit`, and the deployed-artifact check passed with **28/28 runtime dependency license/notice files**. A real Chrome/Windows ECHO-01 `POSITION_JUMP` issue export produced a readable seven-file ZIP; its 242 Excel telemetry records matched the JSON source records, and the exported map attribution was visually checked. These browser observations do **not** establish a complete cross-browser or all-scenarios acceptance matrix for the current build. A local Windows `npm ci` and Pages production build were also verified; Windows-launcher PATH behavior remains under RG-02 review. The included lockfile has SHA-256 `50CE46B21D9B62ECE126E4F5A397DFA229E7A21BB907481B908C785D5AFE24FA`.
 
 **GitHub Pages:** the public demo is available at [tataboj.github.io/simulation-qa-lab](https://tataboj.github.io/simulation-qa-lab/). Locally, `npm run build:pages` builds the `/simulation-qa-lab/` base path. The Pages workflow remains **manual-only**; any new deployment requires owner approval.
 
@@ -60,6 +60,6 @@ All units, routes, events and faults are fictional. The online map uses real geo
 
 This is an independent, privately developed software-testing demo. It does not connect to a live system or represent any organization. See [architecture](docs/QA_ARCHITECTURE.md), [QA scope](docs/QA_SCOPE.md), [issue handoff](docs/ISSUE_TRACKER_HANDOFF.md), and [third-party provenance](docs/THIRD_PARTY_PROVENANCE.md).
 
-**License:** [MIT](LICENSE) for original project code and assets, subject to the rights held by the copyright holder. See [third-party notices](THIRD_PARTY_NOTICES.md) for external software, maps and fonts.
+**License:** [MIT](LICENSE) for original project code and assets, subject to the rights held by the copyright holder. See [third-party notices](THIRD_PARTY_NOTICES.md) and the [public runtime license index](https://tataboj.github.io/simulation-qa-lab/licenses/index.html) for external software, maps and fonts. Upstream licenses remain in force; they are not replaced by this project's MIT license.
 
 The public repository and GitHub Pages demo are live. The ECHO-01 issue-evidence export was accepted on 2026-10-26. Publishing a `v1.0.0` tag or GitHub Release, or changing the app version from `1.0.0-rc.1` to `1.0.0`, requires separate explicit owner approval.

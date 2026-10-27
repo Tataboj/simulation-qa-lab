@@ -40,7 +40,21 @@ test('README states the verified Pages demo without claiming v1.0.0 release',()=
  assert.ok(readme.includes(version));
  for (const id of ['ECHO-CP01','ECHO-EV01','POSITION_JUMP','EVENT_ORDER_VIOLATION']) assert.ok(readme.includes(id),id);
  assert.match(readme,/https:\/\/tataboj\.github\.io\/simulation-qa-lab\//i);
- assert.match(readme,/Pages deployment #2/);
+ // Readiness evidence is dated, and must not be pinned to an obsolete deployment number.
+ assert.match(readme,/16 Python tests/);
+ assert.match(readme,/117 JavaScript tests/);
+ assert.match(readme,/GitHub QA workflow #\d+ passed for commit `[0-9a-f]{7}`/);
+ assert.match(readme,/Pages deployment #\d+ for that commit also passed/);
+ assert.match(readme,/https:\/\/tataboj\.github\.io\/simulation-qa-lab\/licenses\/index\.html/);
+ assert.match(readme,/Node\.js 22\.12\+/);
+ assert.doesNotMatch(readme,/110 JavaScript tests|GitHub QA workflow #4|Pages deployment #2/i);
+ const changelog=read('CHANGELOG.md'),scope=read('docs/QA_SCOPE.md');
+ assert.match(changelog,/GitHub QA workflow #\d+/);
+ assert.match(changelog,/Pages deployment #\d+/);
+ assert.doesNotMatch(changelog,/Not yet deployed/i);
+ assert.match(scope,/GitHub CI #\d+/);
+ assert.match(scope,/GitHub Pages deployment #\d+/);
+ assert.doesNotMatch(scope,/must not be confused with a completed public GitHub or Pages deployment/i);
  assert.match(readme,/explicit owner approval/);
  assert.doesNotMatch(readme,/hosted GitHub Pages site has not been deployed/i);
  assert.doesNotMatch(readme,/The hosted demo has not been deployed/i);
