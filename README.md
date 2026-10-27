@@ -1,6 +1,14 @@
 # Simulation QA Lab
 
-A browser-based QA exercise for deterministic simulation telemetry and event logs. Compare a clean reference run with an injected defect, inspect the source records, and export a developer-ready issue package.
+**What it is:** An independent, browser-based QA lab for finding reproducible defects in fictional training-simulation telemetry and event logs.
+
+**Why I built it:** To demonstrate how I turn raw data and explicit QA rules into clear findings, developer-ready evidence, and regression checks.
+
+**Try it in about two minutes:** [Launch the live demo](https://tataboj.github.io/simulation-qa-lab/), select **Movement validation**, compare **Reference run** (PASS / 0 findings) with **Injected fault** (FAIL / 1 expected finding), and inspect or export the issue evidence.
+
+![Simulation QA Lab: movement fault and QA inspection in the live browser demonstration](docs/images/simulation-qa-lab-demo.png)
+
+*Actual screenshot of the public demo using synthetic training data; not a real simulator or live telemetry feed.*
 
 **Version:** [v1.0.0](https://github.com/Tataboj/simulation-qa-lab/releases/tag/v1.0.0) (officially released on 2026-10-27). Maintained under [Tataboj](https://github.com/Tataboj).
 
