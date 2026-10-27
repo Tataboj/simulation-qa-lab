@@ -2,7 +2,7 @@
 
 A browser-based QA exercise for deterministic simulation telemetry and event logs. Compare a clean reference run with an injected defect, inspect the source records, and export a developer-ready issue package.
 
-**Version:** `1.0.0` (source version prepared for release; check [GitHub Releases](https://github.com/Tataboj/simulation-qa-lab/releases) for official tag/Release publication). Maintained under [Tataboj](https://github.com/Tataboj).
+**Version:** [v1.0.0](https://github.com/Tataboj/simulation-qa-lab/releases/tag/v1.0.0) (officially released on 2026-10-27). Maintained under [Tataboj](https://github.com/Tataboj).
 
 **Live demo:** [Open Simulation QA Lab](https://tataboj.github.io/simulation-qa-lab/) (public GitHub Pages deployment).
 
@@ -50,7 +50,9 @@ npm audit
 npm run build
 ```
 
-As of 2026-10-26, acceptance evidence includes **16 Python tests, 117 JavaScript tests, and all six deterministic scenario fixtures**. GitHub QA workflow #7 passed for commit `9344071`; the manually triggered Pages deployment #4 for that commit also passed. That CI run reported **0 known vulnerabilities** from `npm audit`, and the deployed-artifact check passed with **28/28 runtime dependency license/notice files**. A real Chrome/Windows ECHO-01 `POSITION_JUMP` issue export produced a readable seven-file ZIP; its 242 Excel telemetry records matched the JSON source records, and the exported map attribution was visually checked. On 2026-10-27, Chrome/Windows acceptance (RG-03) also verified the Checkpoint and Event Ordering clean/fault pairs and both seven-file fault ZIPs, including 242 matching JSON/XLSX telemetry records. This is targeted manual acceptance for the three supported domains, **not** an exhaustive cross-browser compatibility matrix. GitHub CI #8 passed for documentation commit `e06b759`; the source-version promotion must receive its **own** successful CI and owner-authorized Pages deployment. The included lockfile has SHA-256 `5F7E165CA8B435AD4701164B23DAAC04003B23D51D10C7A9A17075088D2BFCFC`.
+As of 2026-10-27, acceptance evidence includes **16 Python tests, 117 JavaScript tests, and all six deterministic scenario fixtures**. Targeted Chrome/Windows checks (RG-03) verified clean/fault pairs for Movement, Checkpoint and Event Ordering, including seven-file fault evidence ZIPs and matching original JSON/XLSX telemetry (242 samples per scenario). This is targeted local acceptance, **not** exhaustive cross-browser coverage. The official release commit [`2a61aa7`](https://github.com/Tataboj/simulation-qa-lab/commit/2a61aa71362f0f2d051addc79aa4681914caf5d2) passed [CI #9](https://github.com/Tataboj/simulation-qa-lab/actions/runs/40468249528) and [CI #10](https://github.com/Tataboj/simulation-qa-lab/actions/runs/40472397526). Owner-approved [Pages deployment #5](https://github.com/Tataboj/simulation-qa-lab/actions/runs/40468602865) succeeded for the same commit; the hosted v1.0.0 footer was visually checked in Chrome on Windows. The production artifact retained **28/28 runtime dependency license/notice files**. These checks do not certify every browser or operating environment.
+
+
 
 **GitHub Pages:** the public demo is available at [tataboj.github.io/simulation-qa-lab](https://tataboj.github.io/simulation-qa-lab/). Locally, `npm run build:pages` builds the `/simulation-qa-lab/` base path. The Pages workflow remains **manual-only**; any new deployment requires owner approval.
 
@@ -62,4 +64,4 @@ This is an independent, privately developed software-testing demo. It does not c
 
 **License:** [MIT](LICENSE) for original project code and assets, subject to the rights held by the copyright holder. See [third-party notices](THIRD_PARTY_NOTICES.md) and the [public runtime license index](https://tataboj.github.io/simulation-qa-lab/licenses/index.html) for external software, maps and fonts. Upstream licenses remain in force; they are not replaced by this project's MIT license.
 
-The public repository and GitHub Pages demo are live. The source version alone does **not** constitute an official GitHub tag or Release. Official `v1.0.0` publication requires separate explicit owner approval after release-specific verification, and Pages deployment remains manual-only.
+The public repository, GitHub Pages demo, and official [v1.0.0 release](https://github.com/Tataboj/simulation-qa-lab/releases/tag/v1.0.0) are live. The released tag identifies commit `2a61aa71362f0f2d051addc79aa4681914caf5d2`; later documentation updates to `main` do **not** change that tag. Future Pages deployments remain manual-only and require separate owner approval.
