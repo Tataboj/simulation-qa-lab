@@ -52,7 +52,7 @@ npm run build
 
 As of 2026-10-27, acceptance evidence includes **16 Python tests, 117 JavaScript tests, and all six deterministic scenario fixtures**. Targeted Chrome/Windows checks (RG-03) verified clean/fault pairs for Movement, Checkpoint and Event Ordering, including seven-file fault evidence ZIPs and matching original JSON/XLSX telemetry (242 samples per scenario). This is targeted local acceptance, **not** exhaustive cross-browser coverage. The official release commit [`2a61aa7`](https://github.com/Tataboj/simulation-qa-lab/commit/2a61aa71362f0f2d051addc79aa4681914caf5d2) passed [CI #9](https://github.com/Tataboj/simulation-qa-lab/actions/runs/40468249528) and [CI #10](https://github.com/Tataboj/simulation-qa-lab/actions/runs/40472397526). Owner-approved [Pages deployment #5](https://github.com/Tataboj/simulation-qa-lab/actions/runs/40468602865) succeeded for the same commit; the hosted v1.0.0 footer was visually checked in Chrome on Windows. The production artifact retained **28/28 runtime dependency license/notice files**. These checks do not certify every browser or operating environment.
 
-
+The included lockfile has SHA-256 `5F7E165CA8B435AD4701164B23DAAC04003B23D51D10C7A9A17075088D2BFCFC`.
 
 **GitHub Pages:** the public demo is available at [tataboj.github.io/simulation-qa-lab](https://tataboj.github.io/simulation-qa-lab/). Locally, `npm run build:pages` builds the `/simulation-qa-lab/` base path. The Pages workflow remains **manual-only**; any new deployment requires owner approval.
 
