@@ -18,6 +18,9 @@ test('production build uses vite build rather than the dev server', () => {
 });
 
 test('release manifest, UI footer, and issue report version stay synchronized', () => {
+  const manifest = JSON.parse(readFileSync(new URL('../package-lock.json', import.meta.url), 'utf8'));
+  assert.equal(manifest.version, packageJson.version, 'package-lock top-level version must match package version');
+  assert.equal(manifest.packages[''].version, packageJson.version, 'package-lock root package version must match');
   const html = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
   const issueSource = readFileSync(new URL('../app/issue_report.js', import.meta.url), 'utf8');
   const version = packageJson.version;

@@ -1,7 +1,7 @@
 /** Jira/issue-tracker friendly synthetic QA ticket; no service integration. */
 import {buildExport, reportFor, zipStore} from './evidence_export.js';
 import {distanceMeters, distanceText} from './separation.js';
-export const APP_VERSION='1.0.0-rc.1';
+export const APP_VERSION='1.0.0';
 export function exportTimestamp(date=new Date()){
   if(!(date instanceof Date)||!Number.isFinite(date.getTime()))throw new Error('Valid export date required');
   const p=n=>String(n).padStart(2,'0');

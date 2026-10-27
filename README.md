@@ -2,13 +2,13 @@
 
 A browser-based QA exercise for deterministic simulation telemetry and event logs. Compare a clean reference run with an injected defect, inspect the source records, and export a developer-ready issue package.
 
-**Version:** `1.0.0-rc.1` (release candidate; not an official `v1.0.0` release). Maintained under [Tataboj](https://github.com/Tataboj).
+**Version:** `1.0.0` (source version prepared for release; check [GitHub Releases](https://github.com/Tataboj/simulation-qa-lab/releases) for official tag/Release publication). Maintained under [Tataboj](https://github.com/Tataboj).
 
 **Live demo:** [Open Simulation QA Lab](https://tataboj.github.io/simulation-qa-lab/) (public GitHub Pages deployment).
 
 ## Try it
 
-**Windows:** extract the project and double-click `START_WINDOWS.cmd`. The launcher uses `node` and `npm` from your Windows `PATH`, installs the locked dependencies, and prints a localhost address. Keep the terminal open while using the app. If `node` or `npm` is not recognized, configure the Node.js/npm command path first; Windows-launcher compatibility remains a separate pre-release acceptance item (RG-02).
+**Windows:** extract the project and double-click `START_WINDOWS.cmd`. The launcher uses `node` and `npm` from your Windows `PATH`, installs the locked dependencies, and prints a localhost address. Keep the terminal open while using the app. If `node` or `npm` is not recognized, configure the Node.js/npm command path first. The launcher was successfully tested in Windows CMD and Chrome on 2026-10-27 (RG-02).
 
 **Terminal (Node.js 22.12+ with npm, or another Node.js version supported by Vite 7.3.7):** from the project directory:
 
@@ -50,7 +50,7 @@ npm audit
 npm run build
 ```
 
-As of 2026-10-26, acceptance evidence includes **16 Python tests, 117 JavaScript tests, and all six deterministic scenario fixtures**. GitHub QA workflow #7 passed for commit `9344071`; the manually triggered Pages deployment #4 for that commit also passed. That CI run reported **0 known vulnerabilities** from `npm audit`, and the deployed-artifact check passed with **28/28 runtime dependency license/notice files**. A real Chrome/Windows ECHO-01 `POSITION_JUMP` issue export produced a readable seven-file ZIP; its 242 Excel telemetry records matched the JSON source records, and the exported map attribution was visually checked. These browser observations do **not** establish a complete cross-browser or all-scenarios acceptance matrix for the current build. A local Windows `npm ci` and Pages production build were also verified; Windows-launcher PATH behavior remains under RG-02 review. The included lockfile has SHA-256 `50CE46B21D9B62ECE126E4F5A397DFA229E7A21BB907481B908C785D5AFE24FA`.
+As of 2026-10-26, acceptance evidence includes **16 Python tests, 117 JavaScript tests, and all six deterministic scenario fixtures**. GitHub QA workflow #7 passed for commit `9344071`; the manually triggered Pages deployment #4 for that commit also passed. That CI run reported **0 known vulnerabilities** from `npm audit`, and the deployed-artifact check passed with **28/28 runtime dependency license/notice files**. A real Chrome/Windows ECHO-01 `POSITION_JUMP` issue export produced a readable seven-file ZIP; its 242 Excel telemetry records matched the JSON source records, and the exported map attribution was visually checked. On 2026-10-27, Chrome/Windows acceptance (RG-03) also verified the Checkpoint and Event Ordering clean/fault pairs and both seven-file fault ZIPs, including 242 matching JSON/XLSX telemetry records. This is targeted manual acceptance for the three supported domains, **not** an exhaustive cross-browser compatibility matrix. GitHub CI #8 passed for documentation commit `e06b759`; the source-version promotion must receive its **own** successful CI and owner-authorized Pages deployment. The included lockfile has SHA-256 `5F7E165CA8B435AD4701164B23DAAC04003B23D51D10C7A9A17075088D2BFCFC`.
 
 **GitHub Pages:** the public demo is available at [tataboj.github.io/simulation-qa-lab](https://tataboj.github.io/simulation-qa-lab/). Locally, `npm run build:pages` builds the `/simulation-qa-lab/` base path. The Pages workflow remains **manual-only**; any new deployment requires owner approval.
 
@@ -62,4 +62,4 @@ This is an independent, privately developed software-testing demo. It does not c
 
 **License:** [MIT](LICENSE) for original project code and assets, subject to the rights held by the copyright holder. See [third-party notices](THIRD_PARTY_NOTICES.md) and the [public runtime license index](https://tataboj.github.io/simulation-qa-lab/licenses/index.html) for external software, maps and fonts. Upstream licenses remain in force; they are not replaced by this project's MIT license.
 
-The public repository and GitHub Pages demo are live. The ECHO-01 issue-evidence export was accepted on 2026-10-26. Publishing a `v1.0.0` tag or GitHub Release, or changing the app version from `1.0.0-rc.1` to `1.0.0`, requires separate explicit owner approval.
+The public repository and GitHub Pages demo are live. The source version alone does **not** constitute an official GitHub tag or Release. Official `v1.0.0` publication requires separate explicit owner approval after release-specific verification, and Pages deployment remains manual-only.

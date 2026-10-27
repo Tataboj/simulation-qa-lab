@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
 import {readFileSync, existsSync} from 'node:fs';
 import {reproductionSteps,optionLabel,SCENARIOS,scenarioForId} from '../app/scenario_catalog.js';
 import {reportFor} from '../app/evidence_export.js';
@@ -34,10 +35,11 @@ test('header and left mission card reflect current QA domain, never stale fixed 
  assert.match(main,/scenario_id!==meta\.id/);
  assert.match(main,/\$\('qaDomain'\)\.value=next/);
 });
-test('README states the verified Pages demo without claiming v1.0.0 release',()=>{
+test('README reports actual source version and audited Pages history without implying GitHub Release publication',()=>{
  const version=JSON.parse(read('package.json')).version;
  const readme=read('README.md');
- assert.ok(readme.includes(version));
+ assert.ok(readme.includes(`**Version:** ` + String.fromCharCode(96) + version + String.fromCharCode(96)));
+ assert.match(readme,/source version alone does \*\*not\*\* constitute an official GitHub tag or Release/);
  for (const id of ['ECHO-CP01','ECHO-EV01','POSITION_JUMP','EVENT_ORDER_VIOLATION']) assert.ok(readme.includes(id),id);
  assert.match(readme,/https:\/\/tataboj\.github\.io\/simulation-qa-lab\//i);
  // Readiness evidence is dated, and must not be pinned to an obsolete deployment number.
@@ -47,6 +49,10 @@ test('README states the verified Pages demo without claiming v1.0.0 release',()=
  assert.match(readme,/Pages deployment #\d+ for that commit also passed/);
  assert.match(readme,/https:\/\/tataboj\.github\.io\/simulation-qa-lab\/licenses\/index\.html/);
  assert.match(readme,/Node\.js 22\.12\+/);
+ // Normalize CRLF checkout on Windows to the canonical LF Git blob content.
+ const lockText=readFileSync(new URL('../package-lock.json',import.meta.url),'utf8').replace(/\r\n/g,'\n');
+ const lockDigest=createHash('sha256').update(lockText,'utf8').digest('hex').toUpperCase();
+ assert.ok(readme.includes('The included lockfile has SHA-256 `'+lockDigest+'`.'), 'README lockfile checksum must match canonical Git lockfile bytes');
  assert.doesNotMatch(readme,/110 JavaScript tests|GitHub QA workflow #4|Pages deployment #2/i);
  const changelog=read('CHANGELOG.md'),scope=read('docs/QA_SCOPE.md');
  assert.match(changelog,/GitHub QA workflow #\d+/);
@@ -56,6 +62,7 @@ test('README states the verified Pages demo without claiming v1.0.0 release',()=
  assert.match(scope,/GitHub Pages deployment #\d+/);
  assert.doesNotMatch(scope,/must not be confused with a completed public GitHub or Pages deployment/i);
  assert.match(readme,/explicit owner approval/);
+ assert.match(readme,/RG-03/);
  assert.doesNotMatch(readme,/hosted GitHub Pages site has not been deployed/i);
  assert.doesNotMatch(readme,/The hosted demo has not been deployed/i);
  for (const file of ['docs/QA_ARCHITECTURE.md','docs/THIRD_PARTY_PROVENANCE.md','LICENSE','THIRD_PARTY_NOTICES.md']) assert.ok(existsSync(new URL('../'+file,import.meta.url)),file);
